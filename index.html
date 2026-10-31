@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maremares English Guide</title>
+
+    <!-- Google Fonts:
+         · Cormorant Garamond → serif de alta gama para el título del hero (usado por marcas como Hermès)
+         · Raleway            → geométrica elegante para nav, badges y UI general
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+    <!-- ==============================
+         1. CABECERA (HEADER) + NAV
+         Logo izquierda · Nav central · Logo derecha
+    ============================== -->
+    <header class="site-header">
+        <!-- Logo izquierdo: Universidad IUTSO → enlaza a iutso.com -->
+        <div class="header-logo header-logo--left">
+            <a href="https://www.iutso.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar sitio web de IUTSO">
+                <img src="./assets/img/logo-iutso.png" alt="Logo IUTSO">
+            </a>
+        </div>
+
+        <!-- Navegación central -->
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a href="#" class="nav-link nav-link--active">Inicio</a>
+            <a href="#modulesSection" class="nav-link">Módulos</a>
+            <!-- Enlace al Módulo 1 ya creado -->
+            <a href="welcome.html" class="nav-link">Welcome &amp; Seating</a>
+            <a href="#" class="nav-link nav-link--disabled" aria-disabled="true" title="Próximamente">Order Taking</a>
+            <a href="#" class="nav-link nav-link--disabled" aria-disabled="true" title="Próximamente">Service &amp; Payment</a>
+            <a href="#" class="nav-link nav-link--disabled" aria-disabled="true" title="Próximamente">Bar &amp; Beverages</a>
+        </nav>
+
+        <!-- Logo derecho: Hotel Maremares → enlaza a hotelmaremares.com -->
+        <div class="header-logo header-logo--right">
+            <a href="https://hotelmaremares.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar sitio web del Hotel Maremares">
+                <img src="./assets/img/logo-maremare.png" alt="Logo Hotel Maremares">
+            </a>
+        </div>
+    </header>
+
+    <!-- ==============================
+         2. SECCIÓN HERO — Pantalla completa, sin caja.
+         El título ocupa todo el ancho. Fondo degradado turquesa-azul.
+    ============================== -->
+    <section class="hero-section" id="heroCard">
+        <!-- Capa de degradado decorativo (no tapa el fondo, le da ambiente) -->
+        <div class="hero-bg-overlay" aria-hidden="true"></div>
+
+        <!-- Contenido centrado verticalmente -->
+        <div class="hero-content">
+            <div class="hero-stars" aria-hidden="true">★★★★★</div>
+
+            <h1 class="hero-title">
+                <span class="hero-title__main">Maremares</span>
+                <span class="hero-title__accent">English Guide</span>
+            </h1>
+
+            <div class="hero-divider" aria-hidden="true"></div>
+
+            <p class="hero-subtitle">
+                Programa de capacitación en inglés para el personal del hotel
+            </p>
+
+            <!-- CTA: lleva al grid de módulos con scroll suave -->
+            <a href="#modulesSection" class="hero-cta">
+                Ver módulos
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19,12 12,19 5,12"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==============================
+         3. SECCIÓN DE MÓDULOS (GRID 2x2)
+         Las tarjetas aparecen con animación al hacer scroll (IntersectionObserver).
+    ============================== -->
+    <section class="modules-section" id="modulesSection">
+        <!-- Título de sección (también animado con IntersectionObserver) -->
+        <div class="modules-header reveal-element">
+            <h2 class="modules-title">Módulos por Área de Trabajo</h2>
+            <div class="modules-title-bar" aria-hidden="true"></div>
+        </div>
+
+        <!-- Grid 2x2 de tarjetas -->
+        <div class="modules-grid" id="modulesGrid">
+
+            <!-- TARJETA 1: Welcome & Seating -->
+            <a href="welcome.html" class="module-card reveal-element">
+                <div class="module-card__icon" aria-hidden="true">
+                    <!-- Ícono SVG: puerta / bienvenida -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <div class="module-card__number" aria-hidden="true">01</div>
+                <h3 class="module-card__title">Welcome &amp; Seating</h3>
+                <p class="module-card__desc">Bienvenida al huésped, asignación de mesa y protocolo de recepción.</p>
+                <div class="module-card__cta">
+                    <span>Entrar al Área</span>
+                    <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- TARJETA 2: Order Taking & Food Knowledge -->
+            <a href="#" class="module-card reveal-element">
+                <div class="module-card__icon" aria-hidden="true">
+                    <!-- Ícono SVG: bloc de notas / pedido -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
+                    </svg>
+                </div>
+                <div class="module-card__number" aria-hidden="true">02</div>
+                <h3 class="module-card__title">Order Taking &amp; Food Knowledge</h3>
+                <p class="module-card__desc">Toma de pedidos, menú en inglés y conocimiento gastronómico del hotel.</p>
+                <div class="module-card__cta">
+                    <span>Entrar al Área</span>
+                    <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- TARJETA 3: Food, Delivery, Service & Payment -->
+            <a href="#" class="module-card reveal-element">
+                <div class="module-card__icon" aria-hidden="true">
+                    <!-- Ícono SVG: bandeja / servicio -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                        <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/>
+                        <line x1="14" y1="1" x2="14" y2="4"/>
+                    </svg>
+                </div>
+                <div class="module-card__number" aria-hidden="true">03</div>
+                <h3 class="module-card__title">Food, Delivery, Service &amp; Payment</h3>
+                <p class="module-card__desc">Entrega de platos, servicio de mesa y manejo del cobro en inglés.</p>
+                <div class="module-card__cta">
+                    <span>Entrar al Área</span>
+                    <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- TARJETA 4: Bar, Beverages & Pairing -->
+            <a href="#" class="module-card reveal-element">
+                <div class="module-card__icon" aria-hidden="true">
+                    <!-- Ícono SVG: copa de vino -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 22h8"/><path d="M7 10h10"/>
+                        <path d="M12 15v7"/><path d="M5 3h14l-2.7 7.2a2 2 0 0 1-1.9 1.3H9.6a2 2 0 0 1-1.9-1.3L5 3z"/>
+                    </svg>
+                </div>
+                <div class="module-card__number" aria-hidden="true">04</div>
+                <h3 class="module-card__title">Bar, Beverages &amp; Pairing</h3>
+                <p class="module-card__desc">Vocabulario de bebidas, maridaje y atención en el bar Maremares.</p>
+                <div class="module-card__cta">
+                    <span>Entrar al Área</span>
+                    <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </div>
+            </a>
+
+        </div><!-- /modules-grid -->
+    </section>
+
+    <!-- ======================================================
+         3B. SECCIÓN DE PRUEBA: VOCABULARIO INTERACTIVO
+         Prueba provisional de pronunciación con Web Speech API.
+         Ubicada antes del footer, independiente del grid de módulos.
+    ====================================================== -->
+    <section class="vocab-test-section" id="vocab-test" aria-label="Prueba de vocabulario interactivo">
+
+        <!-- Cabecera de la sección -->
+        <div class="vocab-test-header">
+            <span class="vocab-test-badge">Fase de Testeo</span>
+            <h2 class="vocab-test-title">Vocabulario Interactivo</h2>
+            <p class="vocab-test-subtitle">
+                Haz clic en la tarjeta o en el ícono <strong>🔊</strong> para escuchar la pronunciación natural.<br>
+                Tecnología: <em>Web Speech API</em> nativa del navegador · Sin APIs externas.
+            </p>
+        </div>
+
+        <!-- Grid de tarjetas de vocabulario -->
+        <div class="vocab-grid-container" id="vocabGrid">
+
+            <!-- Tarjeta 1 -->
+            <div class="vocab-card" data-word="Reservation" role="button" tabindex="0" aria-label="Escuchar pronunciación de Reservation">
+                <div class="vocab-card__body">
+                    <span class="vocab-word">Reservation</span>
+                    <span class="vocab-phonetic">/ˌrez.ɚˈveɪ.ʃən/</span>
+                    <span class="vocab-guide">Re-ser-véi-shon</span>
+                </div>
+                <button class="vocab-speak-btn" aria-label="Reproducir Reservation" title="Escuchar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="vocab-card" data-word="Towels" role="button" tabindex="0" aria-label="Escuchar pronunciación de Towels">
+                <div class="vocab-card__body">
+                    <span class="vocab-word">Towels</span>
+                    <span class="vocab-phonetic">/ˈtaʊ.əlz/</span>
+                    <span class="vocab-guide">Táu-els</span>
+                </div>
+                <button class="vocab-speak-btn" aria-label="Reproducir Towels" title="Escuchar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="vocab-card" data-word="Luggage" role="button" tabindex="0" aria-label="Escuchar pronunciación de Luggage">
+                <div class="vocab-card__body">
+                    <span class="vocab-word">Luggage</span>
+                    <span class="vocab-phonetic">/ˈlʌɡ.ɪdʒ/</span>
+                    <span class="vocab-guide">Ló-guich</span>
+                </div>
+                <button class="vocab-speak-btn" aria-label="Reproducir Luggage" title="Escuchar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="vocab-card" data-word="Keys" role="button" tabindex="0" aria-label="Escuchar pronunciación de Keys">
+                <div class="vocab-card__body">
+                    <span class="vocab-word">Keys</span>
+                    <span class="vocab-phonetic">/kiːz/</span>
+                    <span class="vocab-guide">Kii-s</span>
+                </div>
+                <button class="vocab-speak-btn" aria-label="Reproducir Keys" title="Escuchar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="vocab-card" data-word="Housekeeping" role="button" tabindex="0" aria-label="Escuchar pronunciación de Housekeeping">
+                <div class="vocab-card__body">
+                    <span class="vocab-word">Housekeeping</span>
+                    <span class="vocab-phonetic">/ˈhaʊsˌkiː.pɪŋ/</span>
+                    <span class="vocab-guide">Jáus-kii-ping</span>
+                </div>
+                <button class="vocab-speak-btn" aria-label="Reproducir Housekeeping" title="Escuchar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="vocab-card" data-word="Breakfast" role="button" tabindex="0" aria-label="Escuchar pronunciación de Breakfast">
+                <div class="vocab-card__body">
+                    <span class="vocab-word">Breakfast</span>
+                    <span class="vocab-phonetic">/ˈbrek.fəst/</span>
+                    <span class="vocab-guide">Brek-fast</span>
+                </div>
+                <button class="vocab-speak-btn" aria-label="Reproducir Breakfast" title="Escuchar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+            </div>
+
+        </div><!-- /vocab-grid-container -->
+    </section><!-- /vocab-test-section -->
+
+
+    <!-- ==============================
+         4. FOOTER
+         Minimalista, centrado, tipografía fina.
+    ============================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <!-- Ícono Home SVG -->
+            <a href="#" class="footer-home-link" aria-label="Ir al inicio">
+                <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+            </a>
+            <p class="footer-text">
+                <span class="footer-copy">&copy; 2025</span>
+                Maremares English Guide
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script principal al final del body (buena práctica: DOM ya cargado) -->
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

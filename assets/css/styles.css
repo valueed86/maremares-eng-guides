@@ -1,0 +1,972 @@
+/* ================================================================
+   MAREMARES ENGLISH GUIDE — styles.css
+   Hotel Maremares Lechería · 5 Estrellas
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. VARIABLES GLOBALES (:root)  ← PALETA LUMINOSA "RESORT DE LUJO"
+   Aquí centralizamos todos los colores, fuentes y valores reutilizables.
+   Si quieres cambiar el turquesa de toda la app, solo cambias aquí.
+   ---------------------------------------------------------------- */
+:root {
+    /* ── Turquesa Maremares (Color principal del logo) ── */
+    --color-primary:        #179b94;   /* Turquesa vibrante: color corporativo principal */
+    --color-primary-dark:   #0f7068;   /* Turquesa oscuro: hover, bordes activos */
+    --color-primary-glow:   #22c4bc;   /* Turquesa claro: brillos, iconos */
+    --color-primary-light:  #d4f0ee;   /* Turquesa muy pálido: fondos sutiles */
+
+    /* ── Azul del Logo Maremares ──
+       El azul que aparece en el logo NO es navy oscuro.
+       Es un azul petróleo/acero, cercano al agua profunda del Caribe. */
+    --color-blue:           #2a6b8a;   /* Azul Maremares: agua profunda */
+    --color-blue-dark:      #1e4f67;   /* Azul oscuro: texto sobre claro, hover */
+    --color-blue-light:     #ddedf5;   /* Azul muy claro: fondos de acento */
+
+    /* ── Dorado 5 Estrellas ── */
+    --color-gold:           #c9a84c;   /* Dorado suave: estrellas, líneas decorativas */
+    --color-gold-light:     #e8c96a;   /* Dorado brillante: hover de detalles */
+
+    /* ── Fondos ──
+       El hero tiene su propio fondo oscuro turquesa-azul.
+       El resto de la página (grid, footer) es claro y luminoso. */
+    --bg-page:              #f0f6f7;   /* Fondo general: gris-agua muy claro */
+    --bg-card:              #ffffff;   /* Tarjetas: blanco puro */
+    --bg-hero:              #0d3d4a;   /* Hero: azul-petróleo profundo (como el océano) */
+
+    /* ── Textos ── */
+    --text-hero:            #e8f5f7;   /* Texto sobre fondo oscuro del hero */
+    --text-dark:            #1a3040;   /* Títulos: azul marino muy oscuro */
+    --text-body:            #2a5060;   /* Cuerpo: azul petróleo medio */
+    --text-muted:           #6a92a0;   /* Secundario: azul grisáceo */
+    --text-white:           #ffffff;
+
+    /* ── Sombras con tinte turquesa ── */
+    --shadow-card:          0 4px 20px rgba(23, 155, 148, 0.10);
+    --shadow-card-hover:    0 14px 40px rgba(23, 155, 148, 0.24);
+
+    /* ── Bordes ── */
+    --border-card:          rgba(23, 155, 148, 0.14);
+    --border-card-hover:    rgba(23, 155, 148, 0.55);
+
+    /* ── Tipografía y Medidas ── */
+    --font-primary:         'Raleway', sans-serif;      /* UI general: nav, botones, cards */
+    --font-display:         'Cormorant Garamond', serif; /* Títulos hero: elegancia de lujo */
+    --spacing-section:      5rem;
+    --radius-card:          18px;
+    --transition-smooth:    0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+/* ----------------------------------------------------------------
+   2. RESET Y BASE GLOBAL
+   ---------------------------------------------------------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Scroll suave al hacer clic en anclas */
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    /* Usamos la nueva variable de fondo luminoso claro */
+    background-color: var(--bg-page);
+    /* Los textos ahora son oscuros (legibles sobre fondo claro) */
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    /* ✨ Gradientes de luz: turquesa y dorado MUY sutiles sobre fondo claro.
+       Simulan el reflejo de la luz natural en una piscina de resort.
+       Si subes mucho la opacidad el fondo se ve "sucio"; este nivel es el justo. */
+    background-image:
+        /* Halo turquesa suave en la esquina superior derecha (luz de ventana) */
+        radial-gradient(ellipse 60% 40% at 95% 0%,   rgba(23, 155, 148, 0.09) 0%, transparent 70%),
+        /* Halo dorado muy tenue en la esquina inferior izquierda */
+        radial-gradient(ellipse 50% 35% at 0%  100%, rgba(201, 168, 76,  0.07) 0%, transparent 65%),
+        /* Halo turquesa suave centrado (profundidad de piscina) */
+        radial-gradient(ellipse 80% 50% at 50% 50%,  rgba(23, 155, 148, 0.04) 0%, transparent 70%);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ----------------------------------------------------------------
+   3. HEADER + NAV
+   Logos en los extremos · Nav funcional en el centro.
+   ---------------------------------------------------------------- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;          /* Sin padding vertical: la altura la dan los logos */
+    height: 72px;               /* Altura fija: el nav queda perfectamente centrado */
+    position: sticky;
+    top: 0;
+    z-index: 1000;              /* Prioridad superior para que el contenido no se superponga */
+
+    /* Fondo blanco translúcido: crea separación del hero sin cortar el color */
+    background: rgba(248, 252, 253, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(23, 155, 148, 0.12);
+    box-shadow: 0 1px 20px rgba(13, 61, 74, 0.08);
+}
+
+.header-logo {
+    flex: 0 0 auto;             /* Los logos NO se estiran: tamaño fijo */
+}
+
+.header-logo--left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header-logo--right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-logo img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+}
+
+.header-logo img:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+/* ── NAVEGACIÓN CENTRAL ──
+   flex: 1 hace que el nav ocupe todo el espacio entre los dos logos.
+   El nav agrupa sus links con justify-content: center. */
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    flex: 1;                    /* Ocupa todo el espacio entre logos */
+    padding: 0 1.5rem;
+}
+
+.nav-link {
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;               /* Raleway 700: nítido y limpio en tamaños pequeños */
+    letter-spacing: 0.12em;         /* Raleway luce mejor con más espacio entre letras */
+    text-transform: uppercase;      /* Mayúsculas: estilo de nav de revista de lujo */
+    color: var(--text-body);
+    white-space: nowrap;
+    transition: background var(--transition-smooth), color var(--transition-smooth);
+    position: relative;
+}
+
+/* Link activo: resaltado turquesa */
+.nav-link--active {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+/* Hover en links normales */
+.nav-link:not(.nav-link--disabled):not(.nav-link--active):hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+}
+
+/* Links deshabilitados (páginas no creadas aún):
+   se ven apagados y muestran un tooltip "Próximamente" via title attr */
+.nav-link--disabled {
+    color: var(--text-muted);
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;       /* No hacen nada al hacer clic */
+}
+
+/* Pequeño punto indicador bajo los links de área (secciones internas) */
+.nav-link--disabled::after {
+    content: '·';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-muted);
+    font-size: 0.6rem;
+    opacity: 0.5;
+}
+
+
+/* ----------------------------------------------------------------
+   4. HERO SECTION — PANTALLA COMPLETA
+   Sin caja ni glassmorphism. El fondo ES el diseño.
+   Fondo: azul-petróleo del logo, con capas de luz.
+   ---------------------------------------------------------------- */
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 100svh: viewport dinámico (descuenta la barra del navegador en móvil) */
+    min-height: calc(100svh - 72px);
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+
+    /* Fondo base: el azul-petróleo oscuro del logo Maremares */
+    background-color: var(--bg-hero);
+
+    /* Capas de luz sobre el fondo oscuro: dan la sensación de piscina iluminada */
+    background-image:
+        /* Luz principal: turquesa suave desde arriba al centro */
+        radial-gradient(ellipse 70% 55% at 50% 10%, rgba(23, 155, 148, 0.30) 0%, transparent 65%),
+        /* Luz secundaria: azul desde abajo-izquierda (reflejo de agua) */
+        radial-gradient(ellipse 55% 40% at 10% 90%, rgba(42, 107, 138, 0.35) 0%, transparent 60%),
+        /* Brillo dorado muy sutil en la esquina superior derecha */
+        radial-gradient(ellipse 40% 30% at 90% 5%,  rgba(201, 168, 76,  0.12) 0%, transparent 55%);
+}
+
+/* Overlay de gradiente inferior: crea una transición suave hacia la siguiente sección */
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    /* Degradado con múltiples paradas intermedias para una transición suave.
+       La clave es no dar saltos bruscos de opacidad: cada paso es pequeño.
+       Empieza a desvanecerse desde el 40% y llega al color del fondo al 100%. */
+    background: linear-gradient(
+        to bottom,
+        transparent                     0%,
+        transparent                    40%,   /* Zona limpia: el fondo del hero se ve íntegro */
+        rgba(240, 246, 247, 0.05)      52%,   /* Apenas empieza — casi imperceptible */
+        rgba(240, 246, 247, 0.18)      62%,   /* Suave inicio visible */
+        rgba(240, 246, 247, 0.40)      72%,   /* Aceleración gradual */
+        rgba(240, 246, 247, 0.65)      82%,   /* Zona media: ya se nota el claro */
+        rgba(240, 246, 247, 0.88)      92%,   /* Casi llegando al fondo de la página */
+        var(--bg-page)                100%    /* Funde perfectamente con la sección de módulos */
+    );
+    pointer-events: none;
+}
+
+/* Contenedor del texto: centrado, ocupa el ancho total */
+.hero-content {
+    position: relative;         /* Para estar sobre el overlay */
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    padding: 4rem 2rem;
+
+    /* Animación de entrada */
+    animation: heroFadeUp 0.9s ease-out forwards;
+    opacity: 0;
+}
+
+/* Estrellas doradas */
+.hero-stars {
+    font-size: 1rem;
+    letter-spacing: 0.5rem;
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    text-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+}
+
+/* Título: ahora ocupa casi todo el ancho de la pantalla */
+.hero-title {
+    line-height: 1.0;
+    margin-bottom: 1.75rem;
+}
+
+.hero-title__main {
+    display: block;
+    /* clamp(mínimo, valor-fluido, máximo):
+       en móvil: 3rem · en pantallas medianas: escala · en escritorio: 7rem */
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    font-weight: 700;
+    font-family: var(--font-display);   /* Cormorant Garamond: serif de lujo */
+    font-style: italic;                 /* La cursiva en serif de alta gama da clase extra */
+    letter-spacing: 0.01em;
+    /* Blanco frío con tono celeste: legible sobre fondo oscuro de petróleo */
+    color: var(--text-hero);
+    /* Sombra de texto sutil para que resalte sobre las luces del fondo */
+    text-shadow: 0 4px 30px rgba(13, 61, 74, 0.5);
+}
+
+.hero-title__accent {
+    display: block;
+    font-size: clamp(1rem, 3.2vw, 2.2rem);
+    font-weight: 300;               /* Raleway 300: fino y elegante */
+    letter-spacing: 0.55em;         /* Espaciado amplio: típico de marcas de lujo */
+    text-transform: uppercase;
+    /* Turquesa claro-brillante: complementa el azul del fondo */
+    color: var(--color-primary-glow);
+    text-shadow: 0 0 30px rgba(34, 196, 188, 0.4);
+}
+
+/* Separador dorado más ancho ahora que el título es grande */
+.hero-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+}
+
+/* Subtítulo: texto claro sobre oscuro */
+.hero-subtitle {
+    font-size: clamp(0.85rem, 2vw, 1.05rem);
+    font-weight: 300;
+    color: rgba(232, 245, 247, 0.65);  /* Blanco frío, más translúcido */
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+/* Botón CTA — "Ver módulos" — lleva al grid con scroll suave */
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;         /* Píldora */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    /* Borde turquesa translúcido (estilo "ghost button" de lujo) */
+    border: 1.5px solid rgba(34, 196, 188, 0.5);
+    color: var(--color-primary-glow);
+    background: rgba(23, 155, 148, 0.10);
+    backdrop-filter: blur(4px);
+    transition: all var(--transition-smooth);
+}
+
+.hero-cta svg {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--transition-smooth);
+}
+
+.hero-cta:hover {
+    background: rgba(23, 155, 148, 0.25);
+    border-color: rgba(34, 196, 188, 0.8);
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(23, 155, 148, 0.3);
+}
+
+/* La flecha baja en hover: refuerza visualmente la dirección del CTA */
+.hero-cta:hover svg {
+    transform: translateY(4px);
+}
+
+/* Animación keyframe: aparece subiendo desde abajo con fade */
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ----------------------------------------------------------------
+   5. SECCIÓN DE MÓDULOS
+   Grid 2x2 con tarjetas glassmorphism.
+   ---------------------------------------------------------------- */
+.modules-section {
+    padding: var(--spacing-section) 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Encabezado de la sección */
+.modules-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.modules-title {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+/* Barra decorativa bajo el título de módulos */
+.modules-title-bar {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+/* ── GRID DE TARJETAS ──
+   1 columna en móvil → 2 columnas en pantallas >= 768px */
+.modules-grid {
+    display: grid;
+    grid-template-columns: 1fr;                  /* Móvil: 1 columna */
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr);   /* Escritorio: 2x2 */
+        gap: 2rem;
+    }
+}
+
+/* ── TARJETA DE MÓDULO ──
+   Sin glassmorphism: fondo blanco sólido.
+   El "lujo" aquí viene de las sombras, el radio y la transición de hover. */
+.module-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 2rem;
+    cursor: pointer;
+    overflow: hidden;
+
+    /* Blanco puro: máxima limpieza y luminosidad */
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-card);
+
+    /* Sombra en reposo: sutil pero teñida de turquesa.
+       Esto es lo que diferencia una tarjeta de "resort" de una tarjeta
+       genérica: la sombra azul-gris parece de oficina;
+       la sombra turquesa parece de hotel junto al mar. */
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform var(--transition-smooth),
+        border-color var(--transition-smooth),
+        box-shadow var(--transition-smooth);
+}
+
+/* Línea de acento turquesa en la parte superior: aparece en hover */
+.module-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
+}
+
+/* ✨ HOVER: Aquí pasa la magia de la interactividad.
+   translateY(-8px): eleva físicamente la tarjeta (sensación de "levantar").
+   --shadow-card-hover: sombra más grande y turquesa = parece flotar.
+   --border-card-hover: el borde se enciende en turquesa = retroalimentación visual clara. */
+.module-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-card-hover);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.module-card:hover::before {
+    opacity: 1;
+}
+
+/* Número decorativo grande en esquina superior */
+.module-card__number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.75rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    /* Turquesa muy tenue: solo textura, casi invisible */
+    color: rgba(23, 155, 148, 0.07);
+    line-height: 1;
+    user-select: none;
+    transition: color var(--transition-smooth);
+}
+
+.module-card:hover .module-card__number {
+    /* En hover se nota un poco más el número */
+    color: rgba(23, 155, 148, 0.13);
+}
+
+/* Ícono SVG de la tarjeta */
+.module-card__icon {
+    width: 52px;
+    height: 52px;
+    /* Turquesa vibrante: idéntico al color primario del logo */
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+    transition: transform var(--transition-smooth), color var(--transition-smooth);
+}
+
+.module-card:hover .module-card__icon {
+    transform: scale(1.1) rotate(-5deg);
+    /* En hover cambia a dorado: señal de "área activa" */
+    color: var(--color-gold);
+}
+
+/* Título de la tarjeta */
+.module-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    /* Azul marino oscuro: máxima legibilidad sobre blanco */
+    color: var(--text-dark);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+/* Descripción breve */
+.module-card__desc {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 1.75rem;
+}
+
+/* CTA "Entrar al Área" */
+.module-card__cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    transition: gap var(--transition-smooth), color var(--transition-smooth);
+}
+
+.module-card:hover .module-card__cta {
+    gap: 0.85rem;
+    color: var(--color-primary-dark);
+}
+
+.cta-arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-smooth);
+}
+
+.module-card:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+
+/* ----------------------------------------------------------------
+   6. ANIMACIÓN DE SCROLL (IntersectionObserver)
+   Todos los elementos con clase .reveal-element empiezan ocultos.
+   JavaScript los anima al entrar en el viewport.
+   ---------------------------------------------------------------- */
+
+/* Estado inicial: invisible y desplazado hacia abajo */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+/* Estado final: visible y en su posición normal.
+   JavaScript añade esta clase con un delay escalonado. */
+.reveal-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ----------------------------------------------------------------
+   7. FOOTER
+   Minimalista, centrado, tipografía fina.
+   ---------------------------------------------------------------- */
+.site-footer {
+    padding: 2.5rem 2rem;
+    border-top: 1px solid var(--border-glass);
+    margin-top: 2rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-home-link {
+    color: var(--color-primary);
+    opacity: 0.7;
+    transition: opacity var(--transition-smooth), transform var(--transition-smooth), color var(--transition-smooth);
+}
+
+.footer-home-link:hover {
+    opacity: 1;
+    color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+.footer-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.footer-text {
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.footer-copy {
+    color: var(--color-primary);
+    margin-right: 0.4rem;
+}
+
+
+/* ================================================================
+   7. SECCIÓN PRUEBA: VOCABULARIO INTERACTIVO
+   Diseño adaptado a la paleta Maremares.
+   Independiente del grid de módulos.
+   ================================================================ */
+
+/* ── Contenedor de la sección ── */
+.vocab-test-section {
+    /* Mismo fondo oscuro que el hero: da continuidad sin romper la página */
+    background-color: var(--bg-hero);
+    background-image:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(23, 155, 148, 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 15% 80%, rgba(42, 107, 138, 0.20) 0%, transparent 60%);
+    padding: 5rem 2rem;
+}
+
+/* ── Cabecera de la sección ── */
+.vocab-test-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Etiqueta "Fase de Testeo" */
+.vocab-test-badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    /* Color: reutilizamos el dorado de los detalles del hotel */
+    background: rgba(201, 168, 76, 0.15);
+    color: var(--color-gold);
+    border: 1px solid rgba(201, 168, 76, 0.30);
+    margin-bottom: 1rem;
+}
+
+.vocab-test-title {
+    /* Raleway 900 uppercase: bold e impactante, pero diferente al Cormorant
+       italic del hero. Así "Maremares" conserva su fuente única. */
+    font-family: var(--font-primary);   /* Raleway */
+    font-style: normal;                 /* Sin cursiva: se diferencia del hero */
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-hero);
+    margin-bottom: 0.75rem;
+}
+
+.vocab-test-subtitle {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(232, 245, 247, 0.55);
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.vocab-test-subtitle strong {
+    color: rgba(232, 245, 247, 0.80);
+    font-weight: 600;
+}
+
+.vocab-test-subtitle em {
+    color: var(--color-primary-glow);
+    font-style: normal;
+}
+
+/* ── Grid de tarjetas: 1 columna → 2 → 3 ── */
+.vocab-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;           /* Móvil: 1 columna */
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 580px) {
+    .vocab-grid-container {
+        grid-template-columns: repeat(2, 1fr);   /* Tablet: 2 columnas */
+    }
+}
+
+@media (min-width: 860px) {
+    .vocab-grid-container {
+        grid-template-columns: repeat(3, 1fr);   /* Escritorio: 3 columnas */
+    }
+}
+
+/* ── Tarjeta de vocabulario ──
+   Diseño basado en la imagen de referencia pero con paleta Maremares:
+   fondo oscuro translúcido, borde lateral turquesa, sin borde azul-claro. */
+.vocab-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 12px;
+    cursor: pointer;
+
+    /* Fondo: cristal oscuro sobre el fondo petróleo de la sección */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(23, 155, 148, 0.18);
+    /* Borde lateral izquierdo turquesa: el acento visual principal de la tarjeta */
+    border-left: 4px solid var(--color-primary);
+
+    /* Sombra muy sutil */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.20);
+    transition:
+        background var(--transition-smooth),
+        border-left-color var(--transition-smooth),
+        transform var(--transition-smooth),
+        box-shadow var(--transition-smooth);
+}
+
+/* Hover normal: eleva la tarjeta y cambia el borde a dorado */
+.vocab-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-left-color: var(--color-gold);   /* Borde lateral pasa a dorado en hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.30);
+}
+
+/* Estado activo (reproduciendo): destaca con turquesa más fuerte */
+.vocab-card.is-speaking {
+    background: rgba(23, 155, 148, 0.12);
+    border-left-color: var(--color-primary-glow);
+    box-shadow: 0 0 0 2px rgba(34, 196, 188, 0.25), 0 6px 20px rgba(0, 0, 0, 0.30);
+}
+
+/* ── Cuerpo de texto de la tarjeta ── */
+.vocab-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+    min-width: 0;                /* Evita que el texto rompa el layout en pantallas pequeñas */
+}
+
+/* Palabra en inglés: protagonista */
+.vocab-word {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-hero);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+/* Transcripción IPA */
+.vocab-phonetic {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--color-primary-glow);   /* Turquesa claro: se diferencia sin gritar */
+    letter-spacing: 0.01em;
+    font-family: 'Georgia', serif;      /* Serif para los símbolos IPA: se leen mejor */
+}
+
+/* Guía de pronunciación en español */
+.vocab-guide {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(232, 245, 247, 0.45);   /* Muy suave: información de apoyo, no protagonista */
+    letter-spacing: 0.03em;
+}
+
+/* ── Botón altavoz ── */
+.vocab-speak-btn {
+    /* Reset de estilos de botón nativo */
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+
+    /* Contenedor circular turquesa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;        /* No se achica en flex */
+    border-radius: 50%;
+    background: rgba(23, 155, 148, 0.20);
+    border: 1.5px solid rgba(23, 155, 148, 0.35);
+    color: var(--color-primary-glow);
+
+    transition:
+        background var(--transition-smooth),
+        border-color var(--transition-smooth),
+        transform var(--transition-smooth),
+        color var(--transition-smooth);
+}
+
+.vocab-speak-btn svg {
+    width: 18px;
+    height: 18px;
+    pointer-events: none;   /* El SVG no debe capturar el clic, solo el botón padre */
+}
+
+/* Hover en el botón */
+.vocab-speak-btn:hover {
+    background: rgba(23, 155, 148, 0.40);
+    border-color: var(--color-primary-glow);
+    transform: scale(1.08);
+}
+
+/* Estado activo / reproduciendo */
+.vocab-speak-btn.is-speaking {
+    background: var(--color-primary);
+    border-color: var(--color-primary-glow);
+    color: #ffffff;
+    /* Pulso suave que indica que está "hablando" */
+    animation: speakPulse 1s ease-in-out infinite;
+}
+
+/* Animación de pulso durante la reproducción */
+@keyframes speakPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 196, 188, 0.4); }
+    50%       { box-shadow: 0 0 0 8px rgba(34, 196, 188, 0); }
+}
+
+
+/* ----------------------------------------------------------------
+   8. RESPONSIVE ADICIONAL
+   ---------------------------------------------------------------- */
+
+/* Tablet: se ocultan los links de área (muy largos en pantalla media) */
+@media (max-width: 900px) {
+    .nav-link--disabled {
+        display: none;          /* Solo se ven "Inicio" y "Módulos" en tablet */
+    }
+}
+
+/* Móvil: el nav se simplifica al máximo */
+@media (max-width: 600px) {
+    .site-header {
+        padding: 0 1rem;
+        height: 60px;
+    }
+
+    .header-logo img {
+        height: 40px;
+    }
+
+    /* En móvil solo mostramos Inicio y Módulos */
+    .site-nav {
+        gap: 0;
+        padding: 0 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.6rem;
+    }
+
+    .modules-section {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .module-card {
+        padding: 1.75rem 1.25rem;
+    }
+}
+
+
+/* ── Aviso para usuarios de Brave Browser ── */
+.vocab-brave-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    max-width: 1000px;
+    margin: 0 auto 1.5rem;
+    padding: 0.85rem 1.1rem;
+    border-radius: 10px;
+    background: rgba(201, 168, 76, 0.10);
+    border: 1px solid rgba(201, 168, 76, 0.30);
+    border-left: 4px solid var(--color-gold);
+}
+
+.vocab-brave-notice__icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+}
+
+.vocab-brave-notice p {
+    font-size: 0.82rem;
+    color: rgba(232, 245, 247, 0.70);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.vocab-brave-notice strong {
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+.vocab-brave-notice em {
+    color: rgba(232, 245, 247, 0.90);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.vocab-brave-notice__close {
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: rgba(232, 245, 247, 0.40);
+    font-size: 0.9rem;
+    padding: 0.1rem 0.25rem;
+    flex-shrink: 0;
+    transition: color var(--transition-smooth);
+}
+
+.vocab-brave-notice__close:hover {
+    color: var(--color-gold);
+}

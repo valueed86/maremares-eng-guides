@@ -1,0 +1,44 @@
+1. Estructura de Contenido Recomendada
+Puedes dividir tu guía en 4 Módulos Principales y una sección de Anexos/Glosario:
+Módulo I: Welcome & Seating (Anfitrionas / Hosts)
+ * Vocabulario clave: Reservation, table for two, booth, outdoor seating, menu.
+ * Frases tipo diálogos:
+   * "Good morning/evening, welcome to [Hotel Name]. Do you have a reservation?"
+   * "Right this way, please. Here are your menus."
+ * Dinámica interactiva: Ejercicios de completar espacios (Fill in the blanks) o emparejamiento de frases de cortesía.
+Módulo II: Order Taking & Food Knowledge (Mesoneros y Capitanes)
+ * Vocabulario y Glosario: Utensilios de mesa, cortes de carne, métodos de cocción e ingredientes.
+ * Términos de cocción: Cuadro visual con las cocciones de la carne (Rare, Medium, Well Done).
+ * Frases clave:
+   * "Are you ready to order, or do you need a few more minutes?"
+   * "How would you like your steak cooked?"
+   * "Does anyone at the table have any food allergies or dietary restrictions?"
+ * Dinámica interactiva: Juego de roles (Role-play) donde un compañero toma el pedido simulated del cliente.
+Módulo III: Bar, Beverages & Pairing (Equipo de Bar y Mesoneros)
+ * Vocabulario y Cristalería: Highball glass, shaker, jigger, draft beer, mocktail, neat, on the rocks.
+ * Frases clave:
+   * "Would you like to start with something to drink?"
+   * "I recommend pairing this fish with our chilled white wine."
+ * Dinámica interactiva: Ejercicios de correspondencia (Match the drink with the correct glass).
+Módulo IV: Food Delivery, Service & Payment (Runners, Mesoneros y Gerencia)
+ * Vocabulario de servicio: Tray, cloche, side dish, bill, tip, credit card.
+ * Frases clave:
+   * "Careful, the plate is very hot." / "Enjoy your meal!"
+   * "Is everything to your satisfaction?"
+   * "Here is your check. How will you be paying today?"
+ * Atención a reclamos (Capitanes/Gerente):
+   * "I apologize for the delay. Let me check with the kitchen right away."
+🛠️ 2. Formato y Elementos Interactivos
+Para que la guía no sea un libro de texto aburrido, incorpora elementos interactivos:
+ * Transcripción Fonética Práctica (Aproximación al español):
+   * Inglés: "How would you like your steak cooked?"
+   * Pronunciación guiada: /Jau wud ju laik iur steik cukt?/
+ * Códigos QR con Audio:
+   * Graba las frases cortas o los términos del glosario en un drive o plataforma gratuita (como Vocaroo o SoundCloud) e inserta códigos QR en la guía impresos o digitales para que los empleados puedan escnearlos con su teléfono y escuchar la pronunciación exacta.
+ * Secciones de Auto-evaluación / Checklists:
+   * Al final de cada módulo, agrega un pequeño cuestionario visual o Flashcards (tarjetas rápidas de repaso) para practicar entre compañeros antes del turno (Pre-shift briefing).
+🎨 3. Herramientas Recomendadas para Elaborarla
+ * Diseño y Maquetación:
+   * Canva: Utiliza plantillas de "Manual de capacitación" o "Workbooks / Cuadernos de trabajo". Ofrece elementos visuales e íconos interactivos muy profesionales.
+ * Archivos Digitales:
+   * PDF Interactivo: Genera el PDF final con hipervínculos navegables entre el índice, las secciones y los códigos QR de audio.
