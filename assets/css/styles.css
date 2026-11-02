@@ -113,8 +113,10 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2.5rem;          /* Sin padding vertical: la altura la dan los logos */
+    padding: 0 2rem;            /* Sin padding vertical: la altura la dan los logos */
     height: 72px;               /* Altura fija: el nav queda perfectamente centrado */
+    width: 100%;
+    max-width: 100vw;
     position: sticky;
     top: 0;
     z-index: 1000;              /* Prioridad superior para que el contenido no se superponga */
@@ -129,6 +131,9 @@ img {
 
 .header-logo {
     flex: 0 0 auto;             /* Los logos NO se estiran: tamaño fijo */
+    flex-shrink: 0;             /* NUNCA se encogen ni se empujan fuera de la pantalla */
+    display: flex;
+    align-items: center;
 }
 
 .header-logo--left {
@@ -142,15 +147,16 @@ img {
 }
 
 .header-logo img {
-    height: 52px;
+    height: 48px;
     width: auto;
+    max-width: 130px;
     object-fit: contain;
     transition: transform var(--transition-smooth), opacity var(--transition-smooth);
 }
 
 .header-logo img:hover {
-    transform: scale(1.05);
-    opacity: 0.85;
+    transform: scale(1.04);
+    opacity: 0.90;
 }
 
 /* ── NAVEGACIÓN CENTRAL ──
@@ -160,55 +166,62 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.25rem;
+    gap: 0.35rem;
     flex: 1;                    /* Ocupa todo el espacio entre logos */
-    padding: 0 1.5rem;
+    min-width: 0;               /* Evita desbordamiento horizontal */
+    padding: 0 1rem;
 }
 
 .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.45rem 0.85rem;
     border-radius: 8px;
     font-size: 0.75rem;
     font-weight: 700;               /* Raleway 700: nítido y limpio en tamaños pequeños */
-    letter-spacing: 0.12em;         /* Raleway luce mejor con más espacio entre letras */
+    letter-spacing: 0.10em;         /* Raleway luce mejor con más espacio entre letras */
     text-transform: uppercase;      /* Mayúsculas: estilo de nav de revista de lujo */
     color: var(--text-body);
     white-space: nowrap;
-    transition: background var(--transition-smooth), color var(--transition-smooth);
+    text-decoration: none;
+    cursor: pointer;
     position: relative;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* Elimina recuadro gris por defecto en móviles */
+    transition: background var(--transition-smooth), color var(--transition-smooth), transform 0.15s ease;
 }
 
-/* Link activo: resaltado turquesa */
+/* Hover EXCLUSIVO para dispositivos con ratón/touchpad (evita que en móvil quede pegado) */
+@media (hover: hover) and (pointer: fine) {
+    .nav-link:not(.nav-link--disabled):not(.nav-link--active):hover {
+        background: var(--color-primary-light);
+        color: var(--color-primary-dark);
+    }
+}
+
+/* Link activo: resaltado turquesa suave y distinguido */
 .nav-link--active {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     background: var(--color-primary-light);
 }
 
-/* Hover en links normales */
-.nav-link:not(.nav-link--disabled):not(.nav-link--active):hover {
-    background: var(--color-primary-light);
+/* Efecto táctil de pulsación: animación que responde al tap y se relaja */
+.nav-link:active,
+.nav-link.is-tapped {
+    transform: scale(0.92);
+    background: rgba(23, 155, 148, 0.22);
     color: var(--color-primary-dark);
+    transition: transform 0.12s ease, background 0.12s ease;
 }
 
 /* Links deshabilitados (páginas no creadas aún):
    se ven apagados y muestran un tooltip "Próximamente" via title attr */
 .nav-link--disabled {
     color: var(--text-muted);
-    opacity: 0.6;
+    opacity: 0.55;
     cursor: not-allowed;
     pointer-events: none;       /* No hacen nada al hacer clic */
-}
-
-/* Pequeño punto indicador bajo los links de área (secciones internas) */
-.nav-link--disabled::after {
-    content: '·';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--text-muted);
-    font-size: 0.6rem;
-    opacity: 0.5;
 }
 
 
@@ -604,11 +617,30 @@ img {
 /* ----------------------------------------------------------------
    7. FOOTER
    Minimalista, centrado, tipografía fina.
+   Línea divisoria dorada elegante.
    ---------------------------------------------------------------- */
 .site-footer {
-    padding: 2.5rem 2rem;
-    border-top: 1px solid var(--border-glass);
-    margin-top: 2rem;
+    padding: 3rem 2rem 2.5rem;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+/* Línea delgada dorada que reemplaza la antigua línea opaca */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(201, 168, 76, 0.30) 10%,
+        var(--color-gold) 50%,
+        rgba(201, 168, 76, 0.30) 90%,
+        transparent 100%
+    );
 }
 
 .footer-inner {
@@ -878,33 +910,48 @@ img {
    8. RESPONSIVE ADICIONAL
    ---------------------------------------------------------------- */
 
-/* Tablet: se ocultan los links de área (muy largos en pantalla media) */
-@media (max-width: 900px) {
+/* Tablet y pantallas medianas (< 960px):
+   Ocultamos los nombres largos de módulos para mantener el header 100% equilibrado y responsive:
+   [Logo IUTSO] [INICIO] [MÓDULOS] [Logo Maremares] */
+@media (max-width: 960px) {
+    .nav-link--module {
+        display: none !important;
+    }
     .nav-link--disabled {
-        display: none;          /* Solo se ven "Inicio" y "Módulos" en tablet */
+        display: none !important;
     }
 }
 
-/* Móvil: el nav se simplifica al máximo */
+/* Móvil general (< 600px):
+   Header compacto, logos visibles y centrados con INICIO y MÓDULOS sin desbordamiento */
 @media (max-width: 600px) {
     .site-header {
-        padding: 0 1rem;
+        padding: 0 0.85rem;
         height: 60px;
     }
 
-    .header-logo img {
-        height: 40px;
+    .header-logo {
+        flex-shrink: 0;
     }
 
-    /* En móvil solo mostramos Inicio y Módulos */
+    .header-logo img {
+        height: 38px;
+        max-width: 80px;
+    }
+
+    /* En móvil se muestran Inicio y Módulos con espacio equilibrado */
     .site-nav {
-        gap: 0;
-        padding: 0 0.5rem;
+        gap: 0.35rem;
+        padding: 0 0.35rem;
+        flex: 1;
+        justify-content: center;
+        min-width: 0;
     }
 
     .nav-link {
         font-size: 0.72rem;
-        padding: 0.35rem 0.6rem;
+        padding: 0.38rem 0.65rem;
+        letter-spacing: 0.06em;
     }
 
     .modules-section {
@@ -913,6 +960,31 @@ img {
 
     .module-card {
         padding: 1.75rem 1.25rem;
+    }
+}
+
+/* Pantallas móviles muy estrechas (< 360px):
+   Ajuste micrométrico para que quepa todo sin empujar los logos */
+@media (max-width: 360px) {
+    .site-header {
+        padding: 0 0.5rem;
+        height: 56px;
+    }
+
+    .header-logo img {
+        height: 32px;
+        max-width: 65px;
+    }
+
+    .site-nav {
+        gap: 0.2rem;
+        padding: 0 0.2rem;
+    }
+
+    .nav-link {
+        font-size: 0.68rem;
+        padding: 0.32rem 0.48rem;
+        letter-spacing: 0.04em;
     }
 }
 

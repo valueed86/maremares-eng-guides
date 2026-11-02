@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Punto de entrada: llamamos a cada función que configura
        las distintas partes de la interactividad. */
     setupScrollAnimations();
+    setupNavigation();
 
 });
 
@@ -225,6 +226,85 @@ function setupScrollAnimations() {
     */
 
 } /* fin de setupScrollAnimations() */
+
+
+/* ================================================================
+   PARTE 3: NAVEGACIÓN SUPERIOR, FEEDBACK TÁCTIL Y SCROLLSPY
+   ================================================================ */
+function setupNavigation() {
+    const navLinks = document.querySelectorAll('.site-nav .nav-link');
+    const heroSection = document.getElementById('heroCard');
+    const modulesSection = document.getElementById('modulesSection');
+    const navInicio = document.getElementById('navInicio');
+    const navModulos = document.getElementById('navModulos');
+
+    if (!navLinks.length) return;
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (evento) {
+            // 1. Quitar el foco inmediatamente para que el móvil no lo deje seleccionado (:focus sticky)
+            this.blur();
+
+            // 2. Animación táctil de pulsación: se agrega y se retira automáticamente a los 250ms
+            this.classList.add('is-tapped');
+            setTimeout(() => {
+                this.classList.remove('is-tapped');
+            }, 250);
+
+            // 3. Manejo de anclas internas de la página
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                evento.preventDefault();
+
+                const targetEl = document.querySelector(targetId === '#' ? '#heroCard' : targetId);
+
+                // Quitar el estado activo de todos los enlaces para evitar botones marcados a la vez
+                navLinks.forEach(function (l) {
+                    l.classList.remove('nav-link--active');
+                });
+
+                // Si navegó a #modulesSection, marcamos Módulos como activo
+                // Si navegó a #heroCard, marcamos Inicio como activo
+                if (targetId === '#modulesSection' && navModulos) {
+                    navModulos.classList.add('nav-link--active');
+                } else if ((targetId === '#heroCard' || targetId === '#') && navInicio) {
+                    navInicio.classList.add('nav-link--active');
+                }
+
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // 4. ScrollSpy con IntersectionObserver:
+    // Sincroniza automáticamente qué botón está activo mientras el usuario hace scroll
+    if (heroSection && modulesSection && window.IntersectionObserver) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-30% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const sectionObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'modulesSection') {
+                        if (navInicio) navInicio.classList.remove('nav-link--active');
+                        if (navModulos) navModulos.classList.add('nav-link--active');
+                    } else if (entry.target.id === 'heroCard') {
+                        if (navModulos) navModulos.classList.remove('nav-link--active');
+                        if (navInicio) navInicio.classList.add('nav-link--active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sectionObserver.observe(heroSection);
+        sectionObserver.observe(modulesSection);
+    }
+}
 
 
 

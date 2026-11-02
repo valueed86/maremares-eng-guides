@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupFillExercise();
     setupMCExercise();
     setupFlashcards();
+    setupNavTapFeedback();
 });
 
 
@@ -748,4 +749,21 @@ function voltear(tarjeta) {
         var textoIngles = tarjeta.querySelector('.flashcard__back p').textContent;
         hablarTexto(textoIngles);
     }
+}
+
+
+/* ================================================================
+   FEEDBACK TÁCTIL EN NAVEGACIÓN SUPERIOR
+   ================================================================ */
+function setupNavTapFeedback() {
+    const navLinks = document.querySelectorAll('.site-nav .nav-link');
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            this.blur();
+            this.classList.add('is-tapped');
+            setTimeout(() => {
+                this.classList.remove('is-tapped');
+            }, 250);
+        });
+    });
 }
