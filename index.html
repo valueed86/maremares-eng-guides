@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -32,13 +32,13 @@
 
         <!-- Navegación central -->
         <nav class="site-nav" aria-label="Navegación principal">
-            <a href="#" class="nav-link nav-link--active">Inicio</a>
-            <a href="#modulesSection" class="nav-link">Módulos</a>
+            <a href="#heroCard" class="nav-link nav-link--active" id="navInicio">Inicio</a>
+            <a href="#modulesSection" class="nav-link" id="navModulos">Módulos</a>
             <!-- Enlace al Módulo 1 ya creado -->
-            <a href="welcome.html" class="nav-link">Welcome &amp; Seating</a>
-            <a href="#" class="nav-link nav-link--disabled" aria-disabled="true" title="Próximamente">Order Taking</a>
-            <a href="#" class="nav-link nav-link--disabled" aria-disabled="true" title="Próximamente">Service &amp; Payment</a>
-            <a href="#" class="nav-link nav-link--disabled" aria-disabled="true" title="Próximamente">Bar &amp; Beverages</a>
+            <a href="welcome.html" class="nav-link nav-link--module">Welcome &amp; Seating</a>
+            <a href="#" class="nav-link nav-link--module nav-link--disabled" aria-disabled="true" title="Próximamente">Order Taking</a>
+            <a href="#" class="nav-link nav-link--module nav-link--disabled" aria-disabled="true" title="Próximamente">Service &amp; Payment</a>
+            <a href="modulo4.html" class="nav-link nav-link--module">Bar &amp; Beverages</a>
         </nav>
 
         <!-- Logo derecho: Hotel Maremares → enlaza a hotelmaremares.com -->
@@ -161,7 +161,7 @@
             </a>
 
             <!-- TARJETA 4: Bar, Beverages & Pairing -->
-            <a href="#" class="module-card reveal-element">
+            <a href="modulo4.html" class="module-card reveal-element">
                 <div class="module-card__icon" aria-hidden="true">
                     <!-- Ícono SVG: copa de vino -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -183,128 +183,8 @@
         </div><!-- /modules-grid -->
     </section>
 
-    <!-- ======================================================
-         3B. SECCIÓN DE PRUEBA: VOCABULARIO INTERACTIVO
-         Prueba provisional de pronunciación con Web Speech API.
-         Ubicada antes del footer, independiente del grid de módulos.
-    ====================================================== -->
-    <section class="vocab-test-section" id="vocab-test" aria-label="Prueba de vocabulario interactivo">
-
-        <!-- Cabecera de la sección -->
-        <div class="vocab-test-header">
-            <span class="vocab-test-badge">Fase de Testeo</span>
-            <h2 class="vocab-test-title">Vocabulario Interactivo</h2>
-            <p class="vocab-test-subtitle">
-                Haz clic en la tarjeta o en el ícono <strong>🔊</strong> para escuchar la pronunciación natural.<br>
-                Tecnología: <em>Web Speech API</em> nativa del navegador · Sin APIs externas.
-            </p>
-        </div>
-
-        <!-- Grid de tarjetas de vocabulario -->
-        <div class="vocab-grid-container" id="vocabGrid">
-
-            <!-- Tarjeta 1 -->
-            <div class="vocab-card" data-word="Reservation" role="button" tabindex="0" aria-label="Escuchar pronunciación de Reservation">
-                <div class="vocab-card__body">
-                    <span class="vocab-word">Reservation</span>
-                    <span class="vocab-phonetic">/ˌrez.ɚˈveɪ.ʃən/</span>
-                    <span class="vocab-guide">Re-ser-véi-shon</span>
-                </div>
-                <button class="vocab-speak-btn" aria-label="Reproducir Reservation" title="Escuchar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Tarjeta 2 -->
-            <div class="vocab-card" data-word="Towels" role="button" tabindex="0" aria-label="Escuchar pronunciación de Towels">
-                <div class="vocab-card__body">
-                    <span class="vocab-word">Towels</span>
-                    <span class="vocab-phonetic">/ˈtaʊ.əlz/</span>
-                    <span class="vocab-guide">Táu-els</span>
-                </div>
-                <button class="vocab-speak-btn" aria-label="Reproducir Towels" title="Escuchar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Tarjeta 3 -->
-            <div class="vocab-card" data-word="Luggage" role="button" tabindex="0" aria-label="Escuchar pronunciación de Luggage">
-                <div class="vocab-card__body">
-                    <span class="vocab-word">Luggage</span>
-                    <span class="vocab-phonetic">/ˈlʌɡ.ɪdʒ/</span>
-                    <span class="vocab-guide">Ló-guich</span>
-                </div>
-                <button class="vocab-speak-btn" aria-label="Reproducir Luggage" title="Escuchar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Tarjeta 4 -->
-            <div class="vocab-card" data-word="Keys" role="button" tabindex="0" aria-label="Escuchar pronunciación de Keys">
-                <div class="vocab-card__body">
-                    <span class="vocab-word">Keys</span>
-                    <span class="vocab-phonetic">/kiːz/</span>
-                    <span class="vocab-guide">Kii-s</span>
-                </div>
-                <button class="vocab-speak-btn" aria-label="Reproducir Keys" title="Escuchar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Tarjeta 5 -->
-            <div class="vocab-card" data-word="Housekeeping" role="button" tabindex="0" aria-label="Escuchar pronunciación de Housekeeping">
-                <div class="vocab-card__body">
-                    <span class="vocab-word">Housekeeping</span>
-                    <span class="vocab-phonetic">/ˈhaʊsˌkiː.pɪŋ/</span>
-                    <span class="vocab-guide">Jáus-kii-ping</span>
-                </div>
-                <button class="vocab-speak-btn" aria-label="Reproducir Housekeeping" title="Escuchar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Tarjeta 6 -->
-            <div class="vocab-card" data-word="Breakfast" role="button" tabindex="0" aria-label="Escuchar pronunciación de Breakfast">
-                <div class="vocab-card__body">
-                    <span class="vocab-word">Breakfast</span>
-                    <span class="vocab-phonetic">/ˈbrek.fəst/</span>
-                    <span class="vocab-guide">Brek-fast</span>
-                </div>
-                <button class="vocab-speak-btn" aria-label="Reproducir Breakfast" title="Escuchar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
-                </button>
-            </div>
-
-        </div><!-- /vocab-grid-container -->
-    </section><!-- /vocab-test-section -->
-
-
     <!-- ==============================
-         4. FOOTER
+         3. FOOTER
          Minimalista, centrado, tipografía fina.
     ============================== -->
     <footer class="site-footer">
@@ -317,7 +197,7 @@
                 </svg>
             </a>
             <p class="footer-text">
-                <span class="footer-copy">&copy; 2025</span>
+                <span class="footer-copy">&copy; 2026</span>
                 Maremares English Guide
             </p>
         </div>
