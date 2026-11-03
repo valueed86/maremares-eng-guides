@@ -667,7 +667,7 @@ function setupMCExercise() {
 
     if (!btnCheck) return;
 
-    var respuestasCorrectas = { q1: 'a', q2: 'a', q3: 'b' };
+    var respuestasCorrectas = { q1: 'a', q2: 'a', q3: 'a', q4: 'a' };
 
     btnCheck.addEventListener('click', function () {
         var correctas = 0;

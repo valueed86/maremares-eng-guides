@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome & Seating · Maremares English Guide</title>
+    <title>Welcome &amp; Seating · Maremares English Guide</title>
 
     <!-- Mismas fuentes que index.html: Cormorant Garamond + Raleway -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
             <a href="index.html" class="nav-link" id="navInicio">Inicio</a>
             <a href="index.html#modulesSection" class="nav-link" id="navModulos">Módulos</a>
             <a href="welcome.html" class="nav-link nav-link--module nav-link--active" aria-current="page">Welcome &amp; Seating</a>
-            <a href="order.html" class="nav-link nav-link--module nav-link--disabled" aria-disabled="true" title="Próximamente">Order Taking</a>
+            <a href="modulo2.html" class="nav-link nav-link--module">Order Taking</a>
             <a href="service.html" class="nav-link nav-link--module nav-link--disabled" aria-disabled="true" title="Próximamente">Service &amp; Payment</a>
             <a href="modulo4.html" class="nav-link nav-link--module">Bar &amp; Beverages</a>
         </nav>
@@ -49,13 +49,13 @@
 
 
     <!-- ============================================================
-         HERO DEL MÓDULO
+         HERO DEL MÓDULO 1
     ============================================================ -->
     <div class="mod-hero">
         <div class="mod-hero__inner">
-            <span class="mod-hero__badge">Módulo 1 · Mesoneros / Waiters</span>
+            <span class="mod-hero__badge">Módulo 1 · Anfitrionas / Hostesses</span>
             <h1 class="mod-hero__title">Welcome <em>&amp; Seating</em></h1>
-            <p class="mod-hero__desc">Bienvenida, asignación de mesa, toma de pedidos y cierre de servicio.</p>
+            <p class="mod-hero__desc">Recepción del huésped, asignación de mesas, control de salones y protocolo de bienvenida en el restaurante.</p>
         </div>
     </div>
 
@@ -95,30 +95,29 @@
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <input type="text" id="vocabSearch" class="vocab-search-input" placeholder="Buscar frase, traducción o término (ej: mesa, agua, steak, cuenta)..." autocomplete="off" aria-label="Buscar en vocabulario">
+                        <input type="text" id="vocabSearch" class="vocab-search-input" placeholder="Buscar frase, traducción o término (ej: mesa, habitación, terraza, menú)..." autocomplete="off" aria-label="Buscar en vocabulario">
                         <button type="button" id="vocabSearchClear" class="vocab-search-clear" aria-label="Limpiar búsqueda" style="display:none">✕</button>
                     </div>
                     <div class="vocab-hub__counter">
-                        <span id="vocabCounter">Mostrando <strong id="vocabCount">89</strong> expresiones</span>
+                        <span id="vocabCounter">Mostrando <strong id="vocabCount">37</strong> expresiones</span>
                     </div>
                 </div>
 
                 <!-- Filtros rápidos por subcategoría -->
                 <div class="vocab-pills-scroll" role="toolbar" aria-label="Filtro rápido por categoría">
                     <button type="button" class="vocab-pill vocab-pill--active" data-filter="all">✦ Todas</button>
-                    <button type="button" class="vocab-pill" data-filter="greeting">Bienvenida &amp; Mesa</button>
-                    <button type="button" class="vocab-pill" data-filter="order">Toma de Pedido</button>
-                    <button type="button" class="vocab-pill" data-filter="drinks">Bebidas &amp; Entradas</button>
-                    <button type="button" class="vocab-pill" data-filter="service">Servicio</button>
-                    <button type="button" class="vocab-pill" data-filter="steak">Términos de Carne</button>
-                    <button type="button" class="vocab-pill" data-filter="allergies">Alergias</button>
-                    <button type="button" class="vocab-pill" data-filter="utensils">Utensilios</button>
-                    <button type="button" class="vocab-pill" data-filter="farewells">Despedidas</button>
+                    <button type="button" class="vocab-pill" data-filter="greeting">Bienvenida &amp; Entrada</button>
+                    <button type="button" class="vocab-pill" data-filter="tools">Herramientas</button>
+                    <button type="button" class="vocab-pill" data-filter="tables">Gestión de Mesas</button>
+                    <button type="button" class="vocab-pill" data-filter="guests">Huéspedes &amp; Reservas</button>
+                    <button type="button" class="vocab-pill" data-filter="service">Atención &amp; Salones</button>
+                    <button type="button" class="vocab-pill" data-filter="payment">Métodos de Pago</button>
+                    <button type="button" class="vocab-pill" data-filter="farewell">Despedidas</button>
                 </div>
 
                 <!-- Recordatorio interactivo -->
                 <div class="vocab-hint-banner" aria-hidden="true">
-                    <span>Toca cualquier tarjeta o utensilio para escuchar su pronunciación nativa.</span>
+                    <span>Toca cualquier tarjeta para escuchar su pronunciación nativa en inglés.</span>
                 </div>
 
                 <!-- Mensaje de sin resultados -->
@@ -128,78 +127,92 @@
                 </div>
             </div>
 
-            <!-- ── Subsección 1: Bienvenida y asignación de mesa ── -->
+
+            <!-- ── Subsección 1: Saludos, Bienvenidas y Preguntas Necesarias ── -->
             <div class="vocab-section" data-category="greeting">
                 <h2 class="vocab-section__title">
                     <span class="vocab-section__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
                     </span>
-                    Bienvenida y asignación de mesa
-                    <small>Greeting &amp; Seating</small>
-                    <span class="vocab-section__count">8 frases</span>
+                    Saludos, Bienvenidas y Preguntas Clave
+                    <small>Greeting, Welcome &amp; Necessary Questions</small>
+                    <span class="vocab-section__count">9 frases</span>
                 </h2>
                 <div class="vocab-grid">
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¡Buenos días!</div>
-                        <div class="vocab-card__en">Good morning!</div>
-                        <button class="audio-btn" data-audio="audio/welcome/good-morning.mp3" aria-label="Reproducir Good morning">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                        </button>
-                    </div>
-
-                    <div class="vocab-card">
-                        <div class="vocab-card__es">¡Buenas tardes!</div>
-                        <div class="vocab-card__en">Good afternoon!</div>
-                        <button class="audio-btn" data-audio="audio/welcome/good-afternoon.mp3" aria-label="Reproducir Good afternoon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                        </button>
-                    </div>
-
-                    <div class="vocab-card">
-                        <div class="vocab-card__es">¡Buenas noches!</div>
-                        <div class="vocab-card__en">Good evening! / Good night!</div>
-                        <button class="audio-btn" data-audio="audio/welcome/good-evening.mp3" aria-label="Reproducir Good evening">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                        </button>
-                    </div>
-
-                    <div class="vocab-card">
-                        <div class="vocab-card__es">¡Buenas tardes! Bienvenido a Brisas.</div>
-                        <div class="vocab-card__en">Good afternoon! Welcome to Brisas.</div>
+                        <div class="vocab-card__es">¡Bienvenidos a Brisas!</div>
+                        <div class="vocab-card__en">Welcome to Brisas!</div>
                         <button class="audio-btn" data-audio="audio/welcome/welcome-brisas.mp3" aria-label="Reproducir Welcome to Brisas">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                         </button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¿Para cuántas personas es la mesa?</div>
-                        <div class="vocab-card__en">How many people are in your party?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/how-many.mp3" aria-label="Reproducir How many people">
+                        <div class="vocab-card__es">¡Buenos días, bienvenidos!</div>
+                        <div class="vocab-card__en">Good morning, welcome!</div>
+                        <button class="audio-btn" data-audio="audio/welcome/good-morning-welcome.mp3" aria-label="Reproducir Good morning welcome">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                         </button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">Por aquí, por favor.</div>
-                        <div class="vocab-card__en">Right this way, please.</div>
-                        <button class="audio-btn" data-audio="audio/welcome/right-this-way.mp3" aria-label="Reproducir Right this way">
+                        <div class="vocab-card__es">Buenas tardes</div>
+                        <div class="vocab-card__en">Good afternoon / Good evening</div>
+                        <button class="audio-btn" data-audio="audio/welcome/good-afternoon.mp3" aria-label="Reproducir Good afternoon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                         </button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¿Esta mesa está bien para usted?</div>
-                        <div class="vocab-card__en">Is this table okay for you?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/table-okay.mp3" aria-label="Reproducir Is this table okay">
+                        <div class="vocab-card__es">Buenas noches</div>
+                        <div class="vocab-card__en">Good night</div>
+                        <button class="audio-btn" data-audio="audio/welcome/good-night.mp3" aria-label="Reproducir Good night">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                         </button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">En un momento les traigo el menú.</div>
-                        <div class="vocab-card__en">I'll bring you the menus in just a moment.</div>
-                        <button class="audio-btn" data-audio="audio/welcome/bring-menus.mp3" aria-label="Reproducir I'll bring the menus">
+                        <div class="vocab-card__es">Adelante, tome asiento</div>
+                        <div class="vocab-card__en">Go ahead, take a seat</div>
+                        <button class="audio-btn" data-audio="audio/welcome/take-a-seat.mp3" aria-label="Reproducir Go ahead take a seat">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Podría decirme su número de habitación, por favor?</div>
+                        <div class="vocab-card__en">Could you tell me your room number, please?</div>
+                        <button class="audio-btn" data-audio="audio/welcome/room-number.mp3" aria-label="Reproducir Could you tell me your room number">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Mesa para cuántos?</div>
+                        <div class="vocab-card__en">A table for how many?</div>
+                        <button class="audio-btn" data-audio="audio/welcome/table-how-many.mp3" aria-label="Reproducir A table for how many">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Por aquí por favor, sígame</div>
+                        <div class="vocab-card__en">Right this way, please. Follow me</div>
+                        <button class="audio-btn" data-audio="audio/welcome/follow-me.mp3" aria-label="Reproducir Right this way follow me">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Prefieren el salón A, B o la terraza?</div>
+                        <div class="vocab-card__en">Would you prefer Room A, B or the terrace?</div>
+                        <button class="audio-btn" data-audio="audio/welcome/room-preference.mp3" aria-label="Reproducir Would you prefer Room A, B or the terrace">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                         </button>
                     </div>
@@ -208,269 +221,291 @@
             </div><!-- /vocab-section -->
 
 
-            <!-- ── Subsección 2: Tomar el Pedido Principal ── -->
-            <div class="vocab-section" data-category="order">
+            <!-- ── Subsección 2: Herramientas de Trabajo / Tools ── -->
+            <div class="vocab-section" data-category="tools">
                 <h2 class="vocab-section__title">
                     <span class="vocab-section__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
                     </span>
-                    Tomar el Pedido Principal
-                    <small>Taking the Order</small>
-                    <span class="vocab-section__count">8 frases</span>
+                    Herramientas del Podio
+                    <small>Hostess Tools</small>
+                    <span class="vocab-section__count">5 términos</span>
                 </h2>
                 <div class="vocab-grid">
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¿Están listos para ordenar?</div>
-                        <div class="vocab-card__en">Are you ready to order?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/ready-to-order.mp3" aria-label="Reproducir Are you ready to order"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                        <div class="vocab-card__es">Comanda / Pedido</div>
+                        <div class="vocab-card__en">Order</div>
+                        <button class="audio-btn" data-audio="audio/welcome/order.mp3" aria-label="Reproducir Order"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¿Necesitan unos minutos más?</div>
-                        <div class="vocab-card__en">Do you need a few more minutes?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/few-more-minutes.mp3" aria-label="Reproducir Few more minutes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                        <div class="vocab-card__es">Mesa</div>
+                        <div class="vocab-card__en">Table</div>
+                        <button class="audio-btn" data-audio="audio/welcome/table.mp3" aria-label="Reproducir Table"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¿Qué les gustaría ordenar de plato principal?</div>
-                        <div class="vocab-card__en">What would you like for your main course / entrée?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/main-course.mp3" aria-label="Reproducir Main course"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                        <div class="vocab-card__es">Lápiz / Lapicero</div>
+                        <div class="vocab-card__en">Pencil / Pen</div>
+                        <button class="audio-btn" data-audio="audio/welcome/pencil.mp3" aria-label="Reproducir Pencil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¿Alguna alergia o restricción alimentaria?</div>
-                        <div class="vocab-card__en">Do you have any allergies or dietary restrictions?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/allergies.mp3" aria-label="Reproducir Allergies"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                        <div class="vocab-card__es">Podio de bienvenida</div>
+                        <div class="vocab-card__en">Podium</div>
+                        <button class="audio-btn" data-audio="audio/welcome/podium.mp3" aria-label="Reproducir Podium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
                     </div>
 
                     <div class="vocab-card">
-                        <div class="vocab-card__es">¿Qué guarnición prefiere?</div>
-                        <div class="vocab-card__en">Which side dish would you prefer?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/side-dish.mp3" aria-label="Reproducir Side dish"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
-                    </div>
-
-                    <div class="vocab-card">
-                        <div class="vocab-card__es">Soy alérgico/a a…</div>
-                        <div class="vocab-card__en">I am allergic to…</div>
-                        <button class="audio-btn" data-audio="audio/welcome/i-am-allergic.mp3" aria-label="Reproducir I am allergic to"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
-                    </div>
-
-                    <div class="vocab-card">
-                        <div class="vocab-card__es">Tengo alergia a…</div>
-                        <div class="vocab-card__en">I have a [peanut / dairy / gluten] allergy.</div>
-                        <button class="audio-btn" data-audio="audio/welcome/i-have-allergy.mp3" aria-label="Reproducir I have an allergy"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
-                    </div>
-
-                    <div class="vocab-card">
-                        <div class="vocab-card__es">¿Este plato contiene…?</div>
-                        <div class="vocab-card__en">Does this dish contain…?</div>
-                        <button class="audio-btn" data-audio="audio/welcome/dish-contain.mp3" aria-label="Reproducir Does this dish contain"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                        <div class="vocab-card__es">Laptop / Portátil</div>
+                        <div class="vocab-card__en">Laptop</div>
+                        <button class="audio-btn" data-audio="audio/welcome/laptop.mp3" aria-label="Reproducir Laptop"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
                     </div>
 
                 </div>
-
-                <!-- Lista de alergias interactivas con audio -->
-                <div class="allergy-list" data-category="allergies">
-                    <div class="allergy-list__header">
-                        <span class="allergy-list__badge">Atención a Huéspedes</span>
-                        <h3 class="allergy-list__title">Alergias comunes / Common Allergies</h3>
-                        <p class="allergy-list__subtitle">Haz clic en cualquier alergia para escuchar su pronunciación en inglés:</p>
-                    </div>
-                    <ul class="allergy-grid">
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Peanuts">
-                            <span class="allergy-en">Peanuts</span>
-                            <span class="allergy-es">Cacahuetes / maní</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Tree nuts">
-                            <span class="allergy-en">Tree nuts</span>
-                            <span class="allergy-es">Frutos secos (almendras, nueces, avellanas)</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Milk and Dairy">
-                            <span class="allergy-en">Milk / Dairy</span>
-                            <span class="allergy-es">Leche / lácteos</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Eggs">
-                            <span class="allergy-en">Eggs</span>
-                            <span class="allergy-es">Huevos</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Fish">
-                            <span class="allergy-en">Fish</span>
-                            <span class="allergy-es">Pescado</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Shellfish and Crustaceans">
-                            <span class="allergy-en">Shellfish / Crustaceans</span>
-                            <span class="allergy-es">Mariscos / crustáceos</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Wheat">
-                            <span class="allergy-en">Wheat</span>
-                            <span class="allergy-es">Trigo</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Gluten">
-                            <span class="allergy-en">Gluten</span>
-                            <span class="allergy-es">Gluten / cereales con gluten</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Soy">
-                            <span class="allergy-en">Soy / Soya</span>
-                            <span class="allergy-es">Soja</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                        <li class="allergy-item" tabindex="0" role="button" aria-label="Escuchar pronunciación de Sesame">
-                            <span class="allergy-en">Sesame</span>
-                            <span class="allergy-es">Sésamo / ajonjolí</span>
-                            <span class="allergy-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            </div><!-- /vocab-section -->
 
 
-            <!-- ── Subsección 3: Bebidas y Entradas ── -->
-            <div class="vocab-section" data-category="drinks">
+            <!-- ── Subsección 3: Gestión de Mesas y Flujo / Table Management and Flow ── -->
+            <div class="vocab-section" data-category="tables">
                 <h2 class="vocab-section__title">
                     <span class="vocab-section__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 3H4l4 8a4 4 0 0 0 8 0l4-8z"/><path d="M8 22h8"/><path d="M12 11v11"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
                     </span>
-                    Bebidas y Entradas
-                    <small>Drinks &amp; Appetizers</small>
-                    <span class="vocab-section__count">14 items</span>
+                    Gestión de Mesas y Flujo
+                    <small>Table Management &amp; Flow</small>
+                    <span class="vocab-section__count">3 términos</span>
                 </h2>
                 <div class="vocab-grid">
 
-                    <div class="vocab-card"><div class="vocab-card__es">Agua</div><div class="vocab-card__en">Water</div><button class="audio-btn" data-audio="audio/welcome/water.mp3" aria-label="Reproducir Water"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Jugo natural</div><div class="vocab-card__en">Natural juice</div><button class="audio-btn" data-audio="audio/welcome/natural-juice.mp3" aria-label="Reproducir Natural juice"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Jugo de lechoza</div><div class="vocab-card__en">Papaya juice</div><button class="audio-btn" data-audio="audio/welcome/papaya-juice.mp3" aria-label="Reproducir Papaya juice"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Jugo de patilla</div><div class="vocab-card__en">Watermelon juice</div><button class="audio-btn" data-audio="audio/welcome/watermelon-juice.mp3" aria-label="Reproducir Watermelon juice"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Jugo de parchita</div><div class="vocab-card__en">Passion fruit juice</div><button class="audio-btn" data-audio="audio/welcome/passion-juice.mp3" aria-label="Reproducir Passion fruit juice"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Jugo de melón</div><div class="vocab-card__en">Melon juice</div><button class="audio-btn" data-audio="audio/welcome/melon-juice.mp3" aria-label="Reproducir Melon juice"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Café negro</div><div class="vocab-card__en">Black coffee</div><button class="audio-btn" data-audio="audio/welcome/black-coffee.mp3" aria-label="Reproducir Black coffee"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Café con leche</div><div class="vocab-card__en">Coffee with milk</div><button class="audio-btn" data-audio="audio/welcome/coffee-milk.mp3" aria-label="Reproducir Coffee with milk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Café con poca azúcar</div><div class="vocab-card__en">Coffee with a little sugar</div><button class="audio-btn" data-audio="audio/welcome/coffee-little-sugar.mp3" aria-label="Reproducir Coffee little sugar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Café con mucha azúcar</div><div class="vocab-card__en">Coffee with a lot of sugar</div><button class="audio-btn" data-audio="audio/welcome/coffee-lot-sugar.mp3" aria-label="Reproducir Coffee lot sugar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Cerveza</div><div class="vocab-card__en">Beer</div><button class="audio-btn" data-audio="audio/welcome/beer.mp3" aria-label="Reproducir Beer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Refrescos</div><div class="vocab-card__en">Soft drinks</div><button class="audio-btn" data-audio="audio/welcome/soft-drinks.mp3" aria-label="Reproducir Soft drinks"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Ceviche de pescado Caribeño</div><div class="vocab-card__en">Caribbean Fish Ceviche</div><button class="audio-btn" data-audio="audio/welcome/ceviche.mp3" aria-label="Reproducir Caribbean Fish Ceviche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Berenjenas Gratinadas</div><div class="vocab-card__en">Eggplant Au Gratin</div><button class="audio-btn" data-audio="audio/welcome/eggplant.mp3" aria-label="Reproducir Eggplant Au Gratin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Crema de Vegetales</div><div class="vocab-card__en">Cream of Vegetables</div><button class="audio-btn" data-audio="audio/welcome/cream-vegetables.mp3" aria-label="Reproducir Cream of Vegetables"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Frutos mixtos del mar</div><div class="vocab-card__en">Mixed Seafood Platter</div><button class="audio-btn" data-audio="audio/welcome/seafood-platter.mp3" aria-label="Reproducir Mixed Seafood Platter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¿Desean algo de tomar para comenzar?</div><div class="vocab-card__en">Would you like to start with something to drink?</div><button class="audio-btn" data-audio="audio/welcome/start-drink.mp3" aria-label="Reproducir Start with a drink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¿Le gustaría agua embotellada o del filtro?</div><div class="vocab-card__en">Would you like bottled water or filtered water?</div><button class="audio-btn" data-audio="audio/welcome/bottled-water.mp3" aria-label="Reproducir Bottled water"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¿Puedo ofrecerles alguna entrada?</div><div class="vocab-card__en">Can I get you started with an appetizer?</div><button class="audio-btn" data-audio="audio/welcome/appetizer.mp3" aria-label="Reproducir Appetizer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Aquí tienen sus bebidas.</div><div class="vocab-card__en">Here are your drinks.</div><button class="audio-btn" data-audio="audio/welcome/here-drinks.mp3" aria-label="Reproducir Here are your drinks"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Mesa disponible / Abierta</div>
+                        <div class="vocab-card__en">Open table</div>
+                        <button class="audio-btn" data-audio="audio/welcome/open-table.mp3" aria-label="Reproducir Open table"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Mesa en espera (sucia / por recoger)</div>
+                        <div class="vocab-card__en">Dirty table / Unbussed table</div>
+                        <button class="audio-btn" data-audio="audio/welcome/unbussed-table.mp3" aria-label="Reproducir Dirty table"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Mesa bloqueada / Fuera de servicio</div>
+                        <div class="vocab-card__en">Out of service table</div>
+                        <button class="audio-btn" data-audio="audio/welcome/out-of-service.mp3" aria-label="Reproducir Out of service"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
 
                 </div>
-            </div>
+            </div><!-- /vocab-section -->
 
 
-            <!-- ── Subsección 4: Servicio y Atención ── -->
+            <!-- ── Subsección 4: Clientes y Reservas / Guests and Reservation ── -->
+            <div class="vocab-section" data-category="guests">
+                <h2 class="vocab-section__title">
+                    <span class="vocab-section__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </span>
+                    Huéspedes y Reservas
+                    <small>Guests &amp; Reservations</small>
+                    <span class="vocab-section__count">6 términos</span>
+                </h2>
+                <div class="vocab-grid">
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Grupo</div>
+                        <div class="vocab-card__en">Group</div>
+                        <button class="audio-btn" data-audio="audio/welcome/group.mp3" aria-label="Reproducir Group"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Reserva</div>
+                        <div class="vocab-card__en">Reservation</div>
+                        <button class="audio-btn" data-audio="audio/welcome/reservation.mp3" aria-label="Reproducir Reservation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Cliente sin reserva (Lista de espera)</div>
+                        <div class="vocab-card__en">Waitlist / Walk-in guest</div>
+                        <button class="audio-btn" data-audio="audio/welcome/waitlist.mp3" aria-label="Reproducir Waitlist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Cliente habitual</div>
+                        <div class="vocab-card__en">Regular customer</div>
+                        <button class="audio-btn" data-audio="audio/welcome/regular-customer.mp3" aria-label="Reproducir Regular customer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Cliente VIP</div>
+                        <div class="vocab-card__en">VIP client</div>
+                        <button class="audio-btn" data-audio="audio/welcome/vip-client.mp3" aria-label="Reproducir VIP client"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Cliente con todo incluido</div>
+                        <div class="vocab-card__en">All inclusive client</div>
+                        <button class="audio-btn" data-audio="audio/welcome/all-inclusive.mp3" aria-label="Reproducir All inclusive client"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                </div>
+            </div><!-- /vocab-section -->
+
+
+            <!-- ── Subsección 5: Atención al Cliente e Instalaciones / Customer Service and Amenities ── -->
             <div class="vocab-section" data-category="service">
                 <h2 class="vocab-section__title">
                     <span class="vocab-section__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
                     </span>
-                    Servicio y Atención
-                    <small>Table Service &amp; Follow-up</small>
+                    Atención al Cliente e Instalaciones
+                    <small>Customer Service &amp; Amenities</small>
                     <span class="vocab-section__count">6 frases</span>
                 </h2>
                 <div class="vocab-grid">
-                    <div class="vocab-card"><div class="vocab-card__es">Con su permiso.</div><div class="vocab-card__en">Excuse me.</div><button class="audio-btn" data-audio="audio/welcome/excuse-me.mp3" aria-label="Reproducir Excuse me"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¡Que lo disfruten! / ¡Buen provecho!</div><div class="vocab-card__en">Enjoy your meal!</div><button class="audio-btn" data-audio="audio/welcome/enjoy-meal.mp3" aria-label="Reproducir Enjoy your meal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¿Todo bien por aquí?</div><div class="vocab-card__en">Is everything okay over here?</div><button class="audio-btn" data-audio="audio/welcome/everything-okay.mp3" aria-label="Reproducir Everything okay"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¿Cómo estuvo la comida?</div><div class="vocab-card__en">How was everything?</div><button class="audio-btn" data-audio="audio/welcome/how-was.mp3" aria-label="Reproducir How was everything"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¿Le gustaría otra bebida?</div><div class="vocab-card__en">Can I get you another drink?</div><button class="audio-btn" data-audio="audio/welcome/another-drink.mp3" aria-label="Reproducir Another drink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¿Puedo retirar los platos?</div><div class="vocab-card__en">May I take your plates? / May I clear the table?</div><button class="audio-btn" data-audio="audio/welcome/take-plates.mp3" aria-label="Reproducir Take your plates"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Salón A</div>
+                        <div class="vocab-card__en">Room A</div>
+                        <button class="audio-btn" data-audio="audio/welcome/room-a.mp3" aria-label="Reproducir Room A"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Salón B</div>
+                        <div class="vocab-card__en">Room B</div>
+                        <button class="audio-btn" data-audio="audio/welcome/room-b.mp3" aria-label="Reproducir Room B"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">La Terraza (al aire libre)</div>
+                        <div class="vocab-card__en">The terrace</div>
+                        <button class="audio-btn" data-audio="audio/welcome/terrace.mp3" aria-label="Reproducir The terrace"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Aquí tienen su menú</div>
+                        <div class="vocab-card__en">Here is your menu</div>
+                        <button class="audio-btn" data-audio="audio/welcome/here-is-menu.mp3" aria-label="Reproducir Here is your menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¡Que disfruten su comida!</div>
+                        <div class="vocab-card__en">Enjoy your meal!</div>
+                        <button class="audio-btn" data-audio="audio/welcome/enjoy-meal.mp3" aria-label="Reproducir Enjoy your meal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Lamento la demora, gracias por su paciencia</div>
+                        <div class="vocab-card__en">Apologies for the wait, thank you for your patience</div>
+                        <button class="audio-btn" data-audio="audio/welcome/apologies-wait.mp3" aria-label="Reproducir Apologies for the wait"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
                 </div>
-            </div>
+            </div><!-- /vocab-section -->
 
 
-            <!-- ── Subsección 5: Términos de la Carne ── -->
-            <div class="vocab-section" data-category="steak">
+            <!-- ── Subsección 6: Métodos de Pago / Payment Methods ── -->
+            <div class="vocab-section" data-category="payment">
                 <h2 class="vocab-section__title">
                     <span class="vocab-section__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                            <line x1="2" y1="10" x2="22" y2="10"></line>
+                        </svg>
                     </span>
-                    Términos de la Carne
-                    <small>Steak Doneness</small>
-                    <span class="vocab-section__count">9 opciones</span>
+                    Métodos de Pago
+                    <small>Payment Methods</small>
+                    <span class="vocab-section__count">4 frases</span>
                 </h2>
                 <div class="vocab-grid">
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--rare">Rojo frío</span><div class="vocab-card__es">Vuelta y vuelta / Azul</div><div class="vocab-card__en">Rare</div><button class="audio-btn" data-audio="audio/welcome/rare.mp3" aria-label="Reproducir Rare"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--med-rare">Rojo tibio</span><div class="vocab-card__es">Término medio</div><div class="vocab-card__en">Medium rare</div><button class="audio-btn" data-audio="audio/welcome/medium-rare.mp3" aria-label="Reproducir Medium rare"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--med">Rosado caliente</span><div class="vocab-card__es">A punto</div><div class="vocab-card__en">Medium</div><button class="audio-btn" data-audio="audio/welcome/medium.mp3" aria-label="Reproducir Medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--med-well">Ligeramente rosado</span><div class="vocab-card__es">Tres cuartos</div><div class="vocab-card__en">Medium well</div><button class="audio-btn" data-audio="audio/welcome/medium-well.mp3" aria-label="Reproducir Medium well"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--well-done">Cocido total</span><div class="vocab-card__es">Bien cocido</div><div class="vocab-card__en">Well done</div><button class="audio-btn" data-audio="audio/welcome/well-done.mp3" aria-label="Reproducir Well done"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--cut">Corte especial</span><div class="vocab-card__es">Churrasco de Solomo</div><div class="vocab-card__en">Sirloin Steak</div><button class="audio-btn" data-audio="audio/welcome/sirloin.mp3" aria-label="Reproducir Sirloin Steak"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--cut">Corte especial</span><div class="vocab-card__es">Centro de lomito con champiñones</div><div class="vocab-card__en">Tenderloin Center Cut with Mushrooms</div><button class="audio-btn" data-audio="audio/welcome/tenderloin.mp3" aria-label="Reproducir Tenderloin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--cut">Corte especial</span><div class="vocab-card__es">Steak pepper</div><div class="vocab-card__en">Pepper Steak</div><button class="audio-btn" data-audio="audio/welcome/pepper-steak.mp3" aria-label="Reproducir Pepper Steak"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card vocab-card--steak"><span class="steak-badge steak-badge--cut">Corte especial</span><div class="vocab-card__es">Lomito de Hojaldre</div><div class="vocab-card__en">Puff Pastry Tenderloin</div><button class="audio-btn" data-audio="audio/welcome/puff-pastry.mp3" aria-label="Reproducir Puff Pastry Tenderloin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Punto de venta (tarjeta de débito/crédito)</div>
+                        <div class="vocab-card__en">Point of sale / POS</div>
+                        <button class="audio-btn" data-audio="audio/welcome/point-of-sale.mp3" aria-label="Reproducir Point of sale"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Pago móvil</div>
+                        <div class="vocab-card__en">Mobile payment</div>
+                        <button class="audio-btn" data-audio="audio/welcome/mobile-payment.mp3" aria-label="Reproducir Mobile payment"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Efectivo</div>
+                        <div class="vocab-card__en">Cash</div>
+                        <button class="audio-btn" data-audio="audio/welcome/cash.mp3" aria-label="Reproducir Cash"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Cuál será su método de pago?</div>
+                        <div class="vocab-card__en">What will your payment method be?</div>
+                        <button class="audio-btn" data-audio="audio/welcome/payment-method.mp3" aria-label="Reproducir What will your payment method be"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
                 </div>
-            </div>
+            </div><!-- /vocab-section -->
 
 
-            <!-- ── Subsección 6: Utensilios ── -->
-            <div class="vocab-section" data-category="utensils">
+            <!-- ── Subsección 7: Despedida / Farewell ── -->
+            <div class="vocab-section" data-category="farewell">
                 <h2 class="vocab-section__title">
                     <span class="vocab-section__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
                     </span>
-                    Utensilios del Mesero
-                    <small>Waitstaff Tools &amp; Utensils</small>
-                    <span class="vocab-section__count">22 utensilios</span>
-                </h2>
-                <div class="utensils-grid">
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Order pad"><span class="utensil-es">Comandera</span><span class="utensil-en">Order pad</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Menu"><span class="utensil-es">Menú</span><span class="utensil-en">Menu</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Pen"><span class="utensil-es">Lapicero</span><span class="utensil-en">Pen</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Flatware"><span class="utensil-es">Cubiertos</span><span class="utensil-en">Flatware</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Fork"><span class="utensil-es">Tenedor</span><span class="utensil-en">Fork</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Knife"><span class="utensil-es">Cuchillo</span><span class="utensil-en">Knife</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Spoon"><span class="utensil-es">Cuchara</span><span class="utensil-en">Spoon</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Teaspoon / Dessert spoon"><span class="utensil-es">Cucharita de postre/café</span><span class="utensil-en">Teaspoon / Dessert spoon</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Dinner plate"><span class="utensil-es">Plato llano / plato principal</span><span class="utensil-en">Dinner plate</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Soup bowl / Soup plate"><span class="utensil-es">Plato hondo / plato de sopa</span><span class="utensil-en">Soup bowl / Soup plate</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Dessert plate"><span class="utensil-es">Plato de postre</span><span class="utensil-en">Dessert plate</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Bread plate"><span class="utensil-es">Plato de pan</span><span class="utensil-en">Bread plate</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Water glass"><span class="utensil-es">Vaso de agua</span><span class="utensil-en">Water glass</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Wine glass"><span class="utensil-es">Copa de vino (tinto / blanco)</span><span class="utensil-en">Wine glass (red / white)</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Champagne flute"><span class="utensil-es">Copa de champán</span><span class="utensil-en">Champagne flute</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Cup and saucer"><span class="utensil-es">Taza y plato de café</span><span class="utensil-en">Cup and saucer</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Serving tray"><span class="utensil-es">Bandeja de servicio</span><span class="utensil-en">Serving tray</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Salt and pepper shakers"><span class="utensil-es">Salero y pimentero</span><span class="utensil-en">Salt and pepper shakers</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Oil and vinegar cruets"><span class="utensil-es">Aceitera y vinagrera</span><span class="utensil-en">Oil and vinegar cruets</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Ice bucket and tongs"><span class="utensil-es">Hielera y pinzas</span><span class="utensil-en">Ice bucket and tongs</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Paper napkin"><span class="utensil-es">Servilleta de papel</span><span class="utensil-en">Paper napkin</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                    <div class="utensil-item" tabindex="0" role="button" aria-label="Escuchar Cloth napkin"><span class="utensil-es">Servilleta de tela</span><span class="utensil-en">Cloth napkin / Linen napkin</span><span class="utensil-audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span></div>
-                </div>
-            </div>
-
-
-            <!-- ── Subsección 7: Despedida ── -->
-            <div class="vocab-section" data-category="farewells">
-                <h2 class="vocab-section__title">
-                    <span class="vocab-section__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
-                    </span>
-                    Despedida y Cierre de Servicio
-                    <small>Farewells &amp; Closing</small>
-                    <span class="vocab-section__count">6 frases</span>
+                    Despedida Cordial
+                    <small>Farewell &amp; Good Wishes</small>
+                    <span class="vocab-section__count">4 frases</span>
                 </h2>
                 <div class="vocab-grid">
-                    <div class="vocab-card"><div class="vocab-card__es">¡Muchas gracias por su visita, que tengan un excelente día!</div><div class="vocab-card__en">Thank you very much for your visit, have a great day!</div><button class="audio-btn" data-audio="audio/welcome/thank-you-visit.mp3" aria-label="Reproducir Thank you for your visit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Esperamos verlos pronto de vuelta.</div><div class="vocab-card__en">We hope to see you back here soon.</div><button class="audio-btn" data-audio="audio/welcome/see-you-soon.mp3" aria-label="Reproducir See you soon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Que disfruten el resto de su día / noche.</div><div class="vocab-card__en">Enjoy the rest of your day / evening.</div><button class="audio-btn" data-audio="audio/welcome/enjoy-rest.mp3" aria-label="Reproducir Enjoy the rest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">Ha sido un placer atenderles.</div><div class="vocab-card__en">It has been a pleasure serving you.</div><button class="audio-btn" data-audio="audio/welcome/pleasure-serving.mp3" aria-label="Reproducir Pleasure serving you"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¡Buenas noches y feliz regreso a casa!</div><div class="vocab-card__en">Good night and have a safe trip home!</div><button class="audio-btn" data-audio="audio/welcome/safe-trip.mp3" aria-label="Reproducir Safe trip home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
-                    <div class="vocab-card"><div class="vocab-card__es">¡Hasta luego, regresen pronto!</div><div class="vocab-card__en">See you later, come back soon!</div><button class="audio-btn" data-audio="audio/welcome/come-back.mp3" aria-label="Reproducir Come back soon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button></div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Gracias por visitarnos</div>
+                        <div class="vocab-card__en">Thank you for visiting us</div>
+                        <button class="audio-btn" data-audio="audio/welcome/thank-visiting.mp3" aria-label="Reproducir Thank you for visiting us"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¡Que tengan un excelente día / noche!</div>
+                        <div class="vocab-card__en">Have a wonderful day / evening!</div>
+                        <button class="audio-btn" data-audio="audio/welcome/wonderful-day.mp3" aria-label="Reproducir Have a wonderful day"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Hasta luego</div>
+                        <div class="vocab-card__en">See you later</div>
+                        <button class="audio-btn" data-audio="audio/welcome/see-you-later.mp3" aria-label="Reproducir See you later"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Esperamos verlos pronto</div>
+                        <div class="vocab-card__en">We hope to see you again soon</div>
+                        <button class="audio-btn" data-audio="audio/welcome/hope-see-soon.mp3" aria-label="Reproducir We hope to see you again soon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>
+                    </div>
+
                 </div>
-            </div>
+            </div><!-- /vocab-section -->
 
         </section><!-- /panel-vocabulario -->
 
@@ -481,56 +516,85 @@
         <section class="tab-panel" id="panel-dialogos"
                  role="tabpanel" aria-labelledby="tab-dialogos">
 
-            <!-- ── Diálogo 1: Error en la cuenta ── -->
+            <!-- ── Diálogo 1: Recepción, Habitación y Asignación de Mesa ── -->
             <div class="dialogue-wrapper">
                 <div class="dialogue-header">
-                    <h2 class="dialogue-title">Error en la cuenta</h2>
-                    <p class="dialogue-context">El cliente nota un error en la factura. El mesero lo corrige con calma y profesionalismo.</p>
+                    <h2 class="dialogue-title">Recepción, Habitación y Asignación de Mesa</h2>
+                    <p class="dialogue-context">La anfitriona da la bienvenida a los huéspedes en la entrada del restaurante, verifica su habitación y consulta el área de su preferencia.</p>
                 </div>
 
                 <div class="dialogue-layout">
                     <!-- Imagen referencial -->
                     <figure class="dialogue-figure">
-                        <img src="assets/img/dialogos/dialogo-cuenta.jpg"
-                             alt="Cliente revisando la cuenta con el mesero"
+                        <img src="assets/img/dialogos/dialogo-hostess.jpg"
+                             alt="Anfitriona dando la bienvenida a los huéspedes en el restaurante"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <!-- Placeholder visual si la imagen no existe aún -->
+                        <!-- Placeholder visual elegante si la imagen no existe aún -->
                         <div class="dialogue-figure__placeholder" style="display:none">
-                            <span>🧾</span>
-                            <p>Imagen próximamente</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            <p>Podio de Recepción · Brisas Restaurant</p>
                         </div>
-                        <figcaption>Situación: revisión de cuenta</figcaption>
+                        <figcaption>Situación: Protocolo de entrada y asignación</figcaption>
                     </figure>
 
                     <!-- Burbujas de chat -->
                     <div class="dialogue-chat">
 
-                        <div class="bubble bubble--customer">
-                            <span class="bubble__label">👤 Cliente / Customer</span>
-                            <p class="bubble__text">"Excuse me, there is a mistake on the check. We did not order this dessert."</p>
-                            <p class="bubble__translation">Disculpe, hay un error en la cuenta. Nosotros no pedimos este postre.</p>
-                        </div>
-
                         <div class="bubble bubble--server">
-                            <span class="bubble__label">🤵 Mesero / Server</span>
-                            <p class="bubble__text">"I am sorry. Let me correct it."</p>
-                            <p class="bubble__translation">Lo siento. Déjeme corregirlo.</p>
-                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/sorry-correct.mp3" aria-label="Reproducir I am sorry, let me correct it">
+                            <span class="bubble__label">💁‍♀️ Anfitriona / Hostess</span>
+                            <p class="bubble__text">"Good morning! Welcome to our restaurant. May I have your room number, please?"</p>
+                            <p class="bubble__translation">¡Buenos días! Bienvenidos a nuestro restaurante. ¿Me permite su número de habitación, por favor?</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/d1-1.mp3" aria-label="Reproducir Good morning welcome to our restaurant">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                             </button>
                         </div>
 
                         <div class="bubble bubble--customer">
-                            <span class="bubble__label">👤 Cliente / Customer</span>
-                            <p class="bubble__text">"Thank you."</p>
-                            <p class="bubble__translation">Gracias.</p>
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Hello, good morning. Yes, sure, it's room 402."</p>
+                            <p class="bubble__translation">Hola, buenos días. Sí, claro, es la habitación 402.</p>
                         </div>
 
                         <div class="bubble bubble--server">
-                            <span class="bubble__label">🤵 Mesero / Server</span>
-                            <p class="bubble__text">"Here is the correct check."</p>
-                            <p class="bubble__translation">Aquí tiene la cuenta correcta.</p>
-                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/correct-check.mp3" aria-label="Reproducir Here is the correct check">
+                            <span class="bubble__label">💁‍♀️ Anfitriona / Hostess</span>
+                            <p class="bubble__text">"Perfect, thank you. Which area would you prefer today? We have tables available in Room A, Room B, or on the terrace."</p>
+                            <p class="bubble__translation">Excelente, gracias. ¿En qué área prefiere sentarse hoy? Tenemos disponibilidad en el Salón A, Salón B o en la Terraza.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/d1-2.mp3" aria-label="Reproducir Which area would you prefer today">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"We'd prefer the terrace, please. We’d like to sit outdoors."</p>
+                            <p class="bubble__translation">Preferimos la terraza, por favor. Nos gustaría estar al aire libre.</p>
+                        </div>
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">💁‍♀️ Anfitriona / Hostess</span>
+                            <p class="bubble__text">"Right this way, please. Have a seat, your server will bring you the menu shortly."</p>
+                            <p class="bubble__translation">Muy bien, por aquí por favor. Tomen asiento, ahora su mesero les llevará el menú.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/d1-3.mp3" aria-label="Reproducir Right this way have a seat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Thank you very much."</p>
+                            <p class="bubble__translation">Muchas gracias.</p>
+                        </div>
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">💁‍♀️ Anfitriona / Hostess</span>
+                            <p class="bubble__text">"You're very welcome! Enjoy your meal."</p>
+                            <p class="bubble__translation">¡Con mucho gusto! Que disfruten su comida.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/d1-4.mp3" aria-label="Reproducir You are very welcome enjoy your meal">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                             </button>
                         </div>
@@ -540,62 +604,55 @@
             </div><!-- /dialogue-wrapper -->
 
 
-            <!-- ── Diálogo 2: Llegada y asignación de mesa ── -->
+            <!-- ── Diálogo 2: Cierre de Servicio y Despedida Cordial ── -->
             <div class="dialogue-wrapper">
                 <div class="dialogue-header">
-                    <h2 class="dialogue-title">Llegada y asignación de mesa</h2>
-                    <p class="dialogue-context">El mesero recibe a los clientes en la entrada y los guía a su mesa.</p>
+                    <h2 class="dialogue-title">Cierre de Servicio y Despedida Cordial</h2>
+                    <p class="dialogue-context">El huésped finaliza su experiencia en el restaurante y la anfitriona agradece su visita deseándole una excelente noche.</p>
                 </div>
 
                 <div class="dialogue-layout dialogue-layout--reverse">
                     <figure class="dialogue-figure">
-                        <img src="assets/img/dialogos/dialogo-llegada.jpg"
-                             alt="Mesero recibiendo clientes a la entrada del restaurante"
+                        <img src="assets/img/dialogos/dialogo-despedida.jpg"
+                             alt="Anfitriona despidiendo amablemente a los huéspedes"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                         <div class="dialogue-figure__placeholder" style="display:none">
-                            <span>🚶</span>
-                            <p>Imagen próximamente</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <p>Despedida · Experiencia 5 Estrellas</p>
                         </div>
-                        <figcaption>Situación: bienvenida y mesa</figcaption>
+                        <figcaption>Situación: Agradecimiento y despedida del restaurante</figcaption>
                     </figure>
 
                     <div class="dialogue-chat">
 
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Everything was delicious. Thank you!"</p>
+                            <p class="bubble__translation">Todo estuvo delicioso. ¡Muchas gracias!</p>
+                        </div>
+
                         <div class="bubble bubble--server">
-                            <span class="bubble__label">🤵 Mesero / Server</span>
-                            <p class="bubble__text">"Good afternoon! Welcome."</p>
-                            <p class="bubble__translation">¡Buenas tardes! Bienvenidos.</p>
-                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/good-afternoon-welcome.mp3" aria-label="Reproducir Good afternoon welcome">
+                            <span class="bubble__label">💁‍♀️ Anfitriona / Hostess</span>
+                            <p class="bubble__text">"I'm so glad to hear that! Thank you for visiting us tonight."</p>
+                            <p class="bubble__translation">¡Me alegra mucho escuchar eso! Gracias por visitarnos esta noche.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/d2-1.mp3" aria-label="Reproducir I am so glad to hear that">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                             </button>
                         </div>
 
                         <div class="bubble bubble--customer">
-                            <span class="bubble__label">👤 Cliente / Customer</span>
-                            <p class="bubble__text">"Good afternoon. A table for two, please."</p>
-                            <p class="bubble__translation">Buenas tardes. Una mesa para dos, por favor.</p>
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Have a good night!"</p>
+                            <p class="bubble__translation">¡Que tenga buena noche!</p>
                         </div>
 
                         <div class="bubble bubble--server">
-                            <span class="bubble__label">🤵 Mesero / Server</span>
-                            <p class="bubble__text">"Right this way, please."</p>
-                            <p class="bubble__translation">Por aquí, por favor.</p>
-                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/right-this-way-d.mp3" aria-label="Reproducir Right this way">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                            </button>
-                        </div>
-
-                        <div class="bubble bubble--customer">
-                            <span class="bubble__label">👤 Cliente / Customer</span>
-                            <p class="bubble__text">"Thank you."</p>
-                            <p class="bubble__translation">Gracias.</p>
-                        </div>
-
-                        <div class="bubble bubble--server">
-                            <span class="bubble__label">🤵 Mesero / Server</span>
-                            <p class="bubble__text">"I will bring the menus in a moment."</p>
-                            <p class="bubble__translation">Les traeré los menús en un momento.</p>
-                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/bring-menus-d.mp3" aria-label="Reproducir Bring menus">
+                            <span class="bubble__label">💁‍♀️ Anfitriona / Hostess</span>
+                            <p class="bubble__text">"Have a wonderful evening! We hope to see you again soon."</p>
+                            <p class="bubble__translation">¡Que tengan una excelente noche! Esperamos verles muy pronto.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/welcome/d2-2.mp3" aria-label="Reproducir Have a wonderful evening hope to see you soon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                             </button>
                         </div>
@@ -613,75 +670,42 @@
         <section class="tab-panel" id="panel-ejercicios"
                  role="tabpanel" aria-labelledby="tab-ejercicios">
 
-            <!-- ── Ejercicio 1: Completar oraciones ── -->
+            <!-- ── Ejercicio 1: Selección Múltiple ── -->
             <div class="exercise-block">
                 <div class="exercise-block__header">
                     <span class="exercise-block__num">Parte 1</span>
-                    <h2 class="exercise-block__title">Bienvenida y Bebidas — Completa la oración</h2>
-                    <p class="exercise-block__desc">Elige la palabra correcta del recuadro y escríbela en el espacio.</p>
-                </div>
-
-                <div class="wordbank">
-                    <span class="wordbank__label">Palabras:</span>
-                    <button class="wordbank__word" type="button" data-word="welcome">welcome</button>
-                    <button class="wordbank__word" type="button" data-word="order">order</button>
-                    <button class="wordbank__word" type="button" data-word="coffee">coffee</button>
-                    <button class="wordbank__word" type="button" data-word="menus">menus</button>
-                </div>
-
-                <form class="fill-form" id="fillForm" novalidate>
-                    <ol class="fill-list">
-                        <li class="fill-item">
-                            <span>Good afternoon! <input class="fill-input" type="text" data-answer="welcome" placeholder="________" autocomplete="off" aria-label="Respuesta 1"> to Brisas.</span>
-                        </li>
-                        <li class="fill-item">
-                            <span>What would you like to <input class="fill-input" type="text" data-answer="order" placeholder="________" autocomplete="off" aria-label="Respuesta 2">?</span>
-                        </li>
-                        <li class="fill-item">
-                            <span>Would you like some <input class="fill-input" type="text" data-answer="coffee" placeholder="________" autocomplete="off" aria-label="Respuesta 3">?</span>
-                        </li>
-                        <li class="fill-item">
-                            <span>I'll bring you the <input class="fill-input" type="text" data-answer="menus" placeholder="________" autocomplete="off" aria-label="Respuesta 4"> in just a moment.</span>
-                        </li>
-                    </ol>
-                    <div class="exercise-actions">
-                        <button type="button" class="btn-check" id="checkFill">Comprobar ✓</button>
-                        <button type="button" class="btn-reset" id="resetFill">Reiniciar ↺</button>
-                    </div>
-                    <div class="exercise-feedback" id="fillFeedback" aria-live="polite"></div>
-                </form>
-            </div>
-
-
-            <!-- ── Ejercicio 2: Selección múltiple ── -->
-            <div class="exercise-block">
-                <div class="exercise-block__header">
-                    <span class="exercise-block__num">Parte 2</span>
-                    <h2 class="exercise-block__title">Selección Simple — Multiple Choice</h2>
-                    <p class="exercise-block__desc">Elige la opción correcta para cada situación.</p>
+                    <h2 class="exercise-block__title">Selección Múltiple — Elige A o B</h2>
+                    <p class="exercise-block__desc">Lee la situación en español y selecciona la respuesta correcta en inglés.</p>
                 </div>
 
                 <form class="mc-form" id="mcForm" novalidate>
 
                     <div class="mc-question">
-                        <p class="mc-question__text">1. Cuando llega un cliente a la puerta, ¿cómo lo saludas y le das la bienvenida?</p>
-                        <label class="mc-option"><input type="radio" name="q1" value="a"> <span>a) Good afternoon! Welcome.</span></label>
-                        <label class="mc-option"><input type="radio" name="q1" value="b"> <span>b) Are you ready to pay?</span></label>
-                        <label class="mc-option"><input type="radio" name="q1" value="c"> <span>c) I am sorry, we are closed.</span></label>
+                        <p class="mc-question__text">1. ¿Cómo le pides de forma educada el número de habitación al huésped?</p>
+                        <p class="mc-question__subtext"><em>Hostess: "Good morning! Welcome! ________________________, please?"</em></p>
+                        <label class="mc-option"><input type="radio" name="q1" value="a"> <span>a) May I have your room number?</span></label>
+                        <label class="mc-option"><input type="radio" name="q1" value="b"> <span>b) Where is your room?</span></label>
                     </div>
 
                     <div class="mc-question">
-                        <p class="mc-question__text">2. Cuando estás tomando el pedido principal y quieres saber si tienen alguna restricción con la comida, preguntas:</p>
-                        <label class="mc-option"><input type="radio" name="q2" value="a"> <span>a) Do you have any allergies?</span></label>
-                        <label class="mc-option"><input type="radio" name="q2" value="b"> <span>b) Do you like the music?</span></label>
-                        <label class="mc-option"><input type="radio" name="q2" value="c"> <span>c) Where are you from?</span></label>
+                        <p class="mc-question__text">2. ¿Cómo le preguntas en qué área prefiere sentarse?</p>
+                        <p class="mc-question__subtext"><em>Hostess: "Which area do you prefer: ________________________?"</em></p>
+                        <label class="mc-option"><input type="radio" name="q2" value="a"> <span>a) Room A, Room B, or the terrace?</span></label>
+                        <label class="mc-option"><input type="radio" name="q2" value="b"> <span>b) The lobby, the elevator, or the parking lot?</span></label>
                     </div>
 
                     <div class="mc-question">
-                        <p class="mc-question__text">3. Si el cliente pide su carne "término medio", en inglés debe ser:</p>
-                        <label class="mc-option"><input type="radio" name="q3" value="a"> <span>a) Rare</span></label>
-                        <label class="mc-option"><input type="radio" name="q3" value="b"> <span>b) Medium</span></label>
-                        <label class="mc-option"><input type="radio" name="q3" value="c"> <span>c) Well done</span></label>
+                        <p class="mc-question__text">3. ¿Cómo le informas que el mesero le traerá el menú en breve?</p>
+                        <p class="mc-question__subtext"><em>Hostess: "Please take a seat. Your server ________________________."</em></p>
+                        <label class="mc-option"><input type="radio" name="q3" value="a"> <span>a) will bring you the menu shortly</span></label>
+                        <label class="mc-option"><input type="radio" name="q3" value="b"> <span>b) is taking a break</span></label>
+                    </div>
+
+                    <div class="mc-question">
+                        <p class="mc-question__text">4. ¿Cómo te despides deseándole que disfrute su comida y estancia?</p>
+                        <p class="mc-question__subtext"><em>Hostess: "You're very welcome! ________________________!"</em></p>
+                        <label class="mc-option"><input type="radio" name="q4" value="a"> <span>a) Enjoy your meal and your stay!</span></label>
+                        <label class="mc-option"><input type="radio" name="q4" value="b"> <span>b) Have a good night sleep!</span></label>
                     </div>
 
                     <div class="exercise-actions">
@@ -693,69 +717,113 @@
             </div>
 
 
-            <!-- ── Ejercicio 3: Flashcards / Tarjetas giratorias ── -->
+            <!-- ── Ejercicio 2: Completa la Oración (con Word Bank) ── -->
+            <div class="exercise-block">
+                <div class="exercise-block__header">
+                    <span class="exercise-block__num">Parte 2</span>
+                    <h2 class="exercise-block__title">Completa la Oración — Protocolo de Anfitriona</h2>
+                    <p class="exercise-block__desc">Llena el espacio en blanco de la oración en inglés usando una de las palabras del recuadro (haz clic sobre la palabra para insertarla y escucharla):</p>
+                </div>
+
+                <div class="wordbank">
+                    <span class="wordbank__label">Palabras:</span>
+                    <button class="wordbank__word" type="button" data-word="Welcome">Welcome</button>
+                    <button class="wordbank__word" type="button" data-word="room">room</button>
+                    <button class="wordbank__word" type="button" data-word="terrace">terrace</button>
+                    <button class="wordbank__word" type="button" data-word="server">server</button>
+                    <button class="wordbank__word" type="button" data-word="menu">menu</button>
+                </div>
+
+                <form class="fill-form" id="fillForm" novalidate>
+                    <ol class="fill-list">
+                        <li class="fill-item">
+                            <span>1. Para dar la bienvenida al restaurante: "<input class="fill-input" type="text" data-answer="Welcome" placeholder="________" autocomplete="off" aria-label="Respuesta 1"> to our restaurant!"</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>2. Para solicitar el número de habitación: "May I have your <input class="fill-input" type="text" data-answer="room" placeholder="________" autocomplete="off" aria-label="Respuesta 2"> number, please?"</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>3. Para ofrecer la zona al aire libre: "Would you like to sit in Room A or on the <input class="fill-input" type="text" data-answer="terrace" placeholder="________" autocomplete="off" aria-label="Respuesta 3">?"</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>4. Para indicar quién atiende la mesa: "Your <input class="fill-input" type="text" data-answer="server" placeholder="________" autocomplete="off" aria-label="Respuesta 4"> will bring you the menu in a moment."</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>5. Para entregar la carta: "Here is your <input class="fill-input" type="text" data-answer="menu" placeholder="________" autocomplete="off" aria-label="Respuesta 5">."</span>
+                        </li>
+                    </ol>
+                    <div class="exercise-actions">
+                        <button type="button" class="btn-check" id="checkFill">Comprobar ✓</button>
+                        <button type="button" class="btn-reset" id="resetFill">Reiniciar ↺</button>
+                    </div>
+                    <div class="exercise-feedback" id="fillFeedback" aria-live="polite"></div>
+                </form>
+            </div>
+
+
+            <!-- ── Ejercicio 3: Flashcards / Tarjetas Giratorias 3D ── -->
             <div class="exercise-block">
                 <div class="exercise-block__header">
                     <span class="exercise-block__num">Parte 3</span>
                     <h2 class="exercise-block__title">Flashcards — Tarjetas Giratorias</h2>
-                    <p class="exercise-block__desc">Haz clic en cada tarjeta para ver la frase correcta en inglés. ¡Intenta recordarla antes de voltearla!</p>
+                    <p class="exercise-block__desc">Haz clic en cada tarjeta para ver la frase correcta en inglés y escuchar su pronunciación nativa. ¡Intenta recordarla antes de voltearla!</p>
                 </div>
 
                 <div class="flashcards-grid" id="flashcardsGrid">
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¡Buenos días! — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¡Bienvenidos a Brisas! — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>¡Buenos días!</p></div>
-                            <div class="flashcard__back"><p>Good morning!</p></div>
+                            <div class="flashcard__front"><p>¡Bienvenidos a Brisas!</p></div>
+                            <div class="flashcard__back"><p>Welcome to Brisas!</p></div>
                         </div>
                     </div>
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Para cuántas personas? — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Me permite su número de habitación? — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>¿Para cuántas personas es la mesa?</p></div>
-                            <div class="flashcard__back"><p>How many people are in your party?</p></div>
+                            <div class="flashcard__front"><p>¿Me permite su número de habitación, por favor?</p></div>
+                            <div class="flashcard__back"><p>May I have your room number, please?</p></div>
                         </div>
                     </div>
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Por aquí, por favor — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Mesa para cuántos? — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>Por aquí, por favor.</p></div>
-                            <div class="flashcard__back"><p>Right this way, please.</p></div>
+                            <div class="flashcard__front"><p>¿Mesa para cuántos?</p></div>
+                            <div class="flashcard__back"><p>A table for how many?</p></div>
                         </div>
                     </div>
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Están listos para ordenar? — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Por aquí por favor, sígame — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>¿Están listos para ordenar?</p></div>
-                            <div class="flashcard__back"><p>Are you ready to order?</p></div>
+                            <div class="flashcard__front"><p>Por aquí por favor, sígame</p></div>
+                            <div class="flashcard__back"><p>Right this way, please. Follow me</p></div>
                         </div>
                     </div>
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¡Que lo disfruten! — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Prefieren el salón A, B o la terraza? — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>¡Que lo disfruten! / ¡Buen provecho!</p></div>
-                            <div class="flashcard__back"><p>Enjoy your meal!</p></div>
+                            <div class="flashcard__front"><p>¿Prefieren el salón A, B o la terraza?</p></div>
+                            <div class="flashcard__back"><p>Would you prefer Room A, B or the terrace?</p></div>
                         </div>
                     </div>
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Término medio — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Aquí tienen su menú — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>Término medio</p></div>
-                            <div class="flashcard__back"><p>Medium</p></div>
+                            <div class="flashcard__front"><p>Aquí tienen su menú. ¡Que disfruten su comida!</p></div>
+                            <div class="flashcard__back"><p>Here is your menu. Enjoy your meal!</p></div>
                         </div>
                     </div>
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Puedo retirar los platos? — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Lamento la demora — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>¿Puedo retirar los platos?</p></div>
-                            <div class="flashcard__back"><p>May I take your plates?</p></div>
+                            <div class="flashcard__front"><p>Lamento la demora, gracias por su paciencia</p></div>
+                            <div class="flashcard__back"><p>Apologies for the wait, thank you for your patience</p></div>
                         </div>
                     </div>
 
-                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¡Hasta luego! — clic para voltear">
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¡Gracias por visitarnos! — clic para voltear">
                         <div class="flashcard__inner">
-                            <div class="flashcard__front"><p>¡Hasta luego, regresen pronto!</p></div>
-                            <div class="flashcard__back"><p>See you later, come back soon!</p></div>
+                            <div class="flashcard__front"><p>¡Gracias por visitarnos! Esperamos verlos pronto.</p></div>
+                            <div class="flashcard__back"><p>Thank you for visiting us! We hope to see you again soon.</p></div>
                         </div>
                     </div>
 
@@ -776,7 +844,7 @@
          FOOTER
     ============================================================ -->
     <footer class="mod-footer">
-        <p>Módulo 1: Welcome &amp; Seating · <strong>Maremares English Guide</strong> ★★★★★</p>
+        <p>Módulo 1: Welcome &amp; Seating · <strong>Maremares English Guide</strong> · Hotel Maremares</p>
         <a href="index.html" class="mod-footer__back">← Volver al inicio</a>
     </footer>
 
