@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omelet Station Chef · Maremares English Guide</title>
+
+    <!-- Mismas fuentes que index.html: Cormorant Garamond + Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- styles.css aporta el header compartido con index.html -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Estilos específicos del Módulo 3 organizados en assets/modulo 3 -->
+    <link rel="stylesheet" href="./assets/modulo 3/modulo3.css">
+</head>
+<body class="page-module">
+
+    <!-- ============================================================
+         HEADER — idéntico al de index.html y welcome.html
+         Logo IUTSO (izquierda) · Nav módulos (centro) · Logo Maremares (derecha)
+    ============================================================ -->
+    <header class="site-header">
+        <!-- Logo izquierdo: IUTSO -->
+        <div class="header-logo header-logo--left">
+            <a href="https://www.iutso.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar IUTSO">
+                <img src="./assets/img/logo-iutso.png" alt="Logo IUTSO">
+            </a>
+        </div>
+
+        <!-- Navegación central de módulos -->
+        <nav class="site-nav" aria-label="Navegación de módulos">
+            <a href="index.html" class="nav-link" id="navInicio">Inicio</a>
+            <a href="index.html#modulesSection" class="nav-link" id="navModulos">Módulos</a>
+            <a href="welcome.html" class="nav-link nav-link--module">Hostesses</a>
+            <a href="modulo2.html" class="nav-link nav-link--module">Waiters</a>
+            <a href="modulo3.html" class="nav-link nav-link--module nav-link--active" aria-current="page">Omelet Station Chef</a>
+            <a href="modulo4.html" class="nav-link nav-link--module">Bartenders</a>
+        </nav>
+
+        <!-- Logo derecho: Hotel Maremares -->
+        <div class="header-logo header-logo--right">
+            <a href="https://hotelmaremares.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Hotel Maremares">
+                <img src="./assets/img/logo-maremare.png" alt="Logo Hotel Maremares">
+            </a>
+        </div>
+    </header>
+
+
+    <!-- ============================================================
+         HERO DEL MÓDULO 3
+    ============================================================ -->
+    <div class="mod-hero">
+        <div class="mod-hero__inner">
+            <span class="mod-hero__badge">Módulo 3 · Chef de Estación de Omelet</span>
+            <h1 class="mod-hero__title">Omelet Station <em>Chef</em></h1>
+            <p class="mod-hero__desc">Atención en vivo en el buffet de desayuno, toma de pedidos de huevos y omelets, ingredientes frescos y estilos de cocción en inglés.</p>
+        </div>
+    </div>
+
+
+    <!-- ============================================================
+         PESTAÑAS DE NAVEGACIÓN INTERNA
+    ============================================================ -->
+    <div class="tab-bar" role="tablist" aria-label="Secciones del módulo">
+        <button class="tab-btn tab-btn--active" role="tab" data-tab="vocabulario"
+                aria-selected="true" aria-controls="panel-vocabulario">
+            Vocabulario
+        </button>
+        <button class="tab-btn" role="tab" data-tab="dialogos"
+                aria-selected="false" aria-controls="panel-dialogos">
+            Diálogos
+        </button>
+        <button class="tab-btn" role="tab" data-tab="ejercicios"
+                aria-selected="false" aria-controls="panel-ejercicios">
+            Ejercicios
+        </button>
+    </div>
+
+
+    <main class="mod-main">
+
+        <!-- ========================================================
+             PANEL 1: VOCABULARIO
+        ======================================================== -->
+        <section class="tab-panel tab-panel--active" id="panel-vocabulario"
+                 role="tabpanel" aria-labelledby="tab-vocabulario">
+
+            <!-- ── BARRA DE HERRAMIENTAS INTERACTIVA: Búsqueda y Filtros ── -->
+            <div class="vocab-hub">
+                <div class="vocab-hub__search-row">
+                    <div class="vocab-search-wrap">
+                        <svg class="vocab-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="vocabSearch" class="vocab-search-input" placeholder="Buscar frase, ingrediente o estilo de huevo (ej: omelet, sunny-side up, cheese, bacon)..." autocomplete="off" aria-label="Buscar en vocabulario">
+                        <button type="button" id="vocabSearchClear" class="vocab-search-clear" aria-label="Limpiar búsqueda" style="display:none">✕</button>
+                    </div>
+                    <div class="vocab-hub__counter">
+                        <span id="vocabCounter">Mostrando <strong id="vocabCount">43</strong> expresiones</span>
+                    </div>
+                </div>
+
+                <!-- Filtros rápidos por subcategoría -->
+                <div class="vocab-pills-scroll" role="toolbar" aria-label="Filtro rápido por categoría">
+                    <button type="button" class="vocab-pill vocab-pill--active" data-filter="all">✦ Todas</button>
+                    <button type="button" class="vocab-pill" data-filter="phrases">Frases del Cocinero</button>
+                    <button type="button" class="vocab-pill" data-filter="ingredients">Ingredientes &amp; Rellenos</button>
+                    <button type="button" class="vocab-pill" data-filter="styles">Estilos de Cocción</button>
+                </div>
+
+                <!-- Recordatorio interactivo -->
+                <div class="vocab-hint-banner" aria-hidden="true">
+                    <span>Toca cualquier tarjeta o ingrediente para escuchar su pronunciación nativa.</span>
+                </div>
+
+                <!-- Mensaje de sin resultados -->
+                <div id="vocabEmptyState" class="vocab-empty-state" style="display:none;">
+                    <p class="vocab-empty-state__text">No se encontraron expresiones que coincidan con "<span id="vocabEmptyQuery"></span>".</p>
+                    <button type="button" id="vocabResetSearch" class="btn-reset-filters">Ver todo el vocabulario</button>
+                </div>
+            </div>
+
+
+            <!-- ── Subsección 1: Frases Útiles para el Cocinero / Cook's Phrases ── -->
+            <div class="vocab-section" data-category="phrases">
+                <h2 class="vocab-section__title">
+                    <span class="vocab-section__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path>
+                            <line x1="6" y1="17" x2="18" y2="17"></line>
+                        </svg>
+                    </span>
+                    Frases Útiles para el Cocinero
+                    <small>Cook's Phrases</small>
+                    <span class="vocab-section__count">13 frases</span>
+                </h2>
+                <div class="vocab-grid">
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¡Buenos días! ¿Cómo le gustaría sus huevos hoy?</div>
+                        <div class="vocab-card__en">Good morning! How would you like your eggs today?</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase1.mp3" aria-label="Reproducir Good morning! How would you like your eggs today?">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Desea una omelet o huevos fritos?</div>
+                        <div class="vocab-card__en">Would you like an omelet or fried eggs?</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase2.mp3" aria-label="Reproducir Would you like an omelet or fried eggs?">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">De nada</div>
+                        <div class="vocab-card__en">You're welcome</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase3.mp3" aria-label="Reproducir You're welcome">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Qué ingredientes le gustaría en su omelet?</div>
+                        <div class="vocab-card__en">Which ingredients would you like in your omelet?</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase4.mp3" aria-label="Reproducir Which ingredients would you like in your omelet?">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Lo quiere con todo?</div>
+                        <div class="vocab-card__en">Would you like everything on it?</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase5.mp3" aria-label="Reproducir Would you like everything on it?">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¿Con queso o sin queso?</div>
+                        <div class="vocab-card__en">With cheese or without cheese?</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase6.mp3" aria-label="Reproducir With cheese or without cheese?">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Tardará unos dos minutos, por favor.</div>
+                        <div class="vocab-card__en">It will take about two minutes, please.</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase7.mp3" aria-label="Reproducir It will take about two minutes, please.">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¡Aquí tiene! Que disfrute su desayuno.</div>
+                        <div class="vocab-card__en">Here you go! Enjoy your breakfast.</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase8.mp3" aria-label="Reproducir Here you go! Enjoy your breakfast.">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Cuidado, el plato está caliente.</div>
+                        <div class="vocab-card__en">Careful, the plate is hot.</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase9.mp3" aria-label="Reproducir Careful, the plate is hot.">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Estaré con usted en solo un momento.</div>
+                        <div class="vocab-card__en">I'll be with you in just a moment.</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase10.mp3" aria-label="Reproducir I'll be with you in just a moment.">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¡Gracias por esperar! ¿Qué le puedo ir preparando?</div>
+                        <div class="vocab-card__en">Thank you for waiting! What can I get started for you?</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase11.mp3" aria-label="Reproducir Thank you for waiting! What can I get started for you?">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Su omelet ya casi está lista.</div>
+                        <div class="vocab-card__en">Your omelet is almost ready.</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase12.mp3" aria-label="Reproducir Your omelet is almost ready.">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">¡Avíseme si necesita algo más!</div>
+                        <div class="vocab-card__en">Let me know if you need anything else!</div>
+                        <button class="audio-btn" data-audio="audio/omelet/phrase13.mp3" aria-label="Reproducir Let me know if you need anything else!">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                </div><!-- /vocab-grid -->
+            </div><!-- /vocab-section phrases -->
+
+
+            <!-- ── Subsección 2: Ingredientes y Rellenos / Ingredients & Fillings ── -->
+            <div class="vocab-section" data-category="ingredients">
+                <h2 class="vocab-section__title">
+                    <span class="vocab-section__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2C8.5 2 5 6 5 12c0 4.5 3 8 7 8s7-3.5 7-8c0-6-3.5-10-7-10z"></path>
+                            <path d="M12 7c-2 0-3.5 1.5-3.5 3.5"></path>
+                        </svg>
+                    </span>
+                    Ingredientes y Rellenos
+                    <small>Ingredients &amp; Fillings</small>
+                    <span class="vocab-section__count">18 términos</span>
+                </h2>
+                <div class="vocab-grid">
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos enteros</div>
+                        <div class="vocab-card__en">Whole eggs</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing1.mp3" aria-label="Reproducir Whole eggs">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Claras de huevo</div>
+                        <div class="vocab-card__en">Egg whites</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing2.mp3" aria-label="Reproducir Egg whites">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Yemas de huevo</div>
+                        <div class="vocab-card__en">Egg yolks</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing3.mp3" aria-label="Reproducir Egg yolks">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Queso rallado</div>
+                        <div class="vocab-card__en">Shredded cheese</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing4.mp3" aria-label="Reproducir Shredded cheese">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Queso cheddar</div>
+                        <div class="vocab-card__en">Cheddar cheese</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing5.mp3" aria-label="Reproducir Cheddar cheese">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Queso mozzarella</div>
+                        <div class="vocab-card__en">Mozzarella cheese</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing6.mp3" aria-label="Reproducir Mozzarella cheese">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Jamón</div>
+                        <div class="vocab-card__en">Ham</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing7.mp3" aria-label="Reproducir Ham">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Tocineta</div>
+                        <div class="vocab-card__en">Bacon</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing8.mp3" aria-label="Reproducir Bacon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Salchicha</div>
+                        <div class="vocab-card__en">Sausage</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing9.mp3" aria-label="Reproducir Sausage">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Cebolla</div>
+                        <div class="vocab-card__en">Onion</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing10.mp3" aria-label="Reproducir Onion">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Pimentón</div>
+                        <div class="vocab-card__en">Bell pepper</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing11.mp3" aria-label="Reproducir Bell pepper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Pimiento dulce</div>
+                        <div class="vocab-card__en">Sweet pepper</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing12.mp3" aria-label="Reproducir Sweet pepper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Tomate</div>
+                        <div class="vocab-card__en">Tomato</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing13.mp3" aria-label="Reproducir Tomato">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Ají</div>
+                        <div class="vocab-card__en">Chili peppers</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing14.mp3" aria-label="Reproducir Chili peppers">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Mantequilla</div>
+                        <div class="vocab-card__en">Butter</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing15.mp3" aria-label="Reproducir Butter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Aceite</div>
+                        <div class="vocab-card__en">Oil</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing16.mp3" aria-label="Reproducir Oil">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Sal</div>
+                        <div class="vocab-card__en">Salt</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing17.mp3" aria-label="Reproducir Salt">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Pimienta</div>
+                        <div class="vocab-card__en">Pepper</div>
+                        <button class="audio-btn" data-audio="audio/omelet/ing18.mp3" aria-label="Reproducir Pepper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                </div><!-- /vocab-grid -->
+            </div><!-- /vocab-section ingredients -->
+
+
+            <!-- ── Subsección 3: Estilos de Cocción de Huevos / Egg Cooking Styles ── -->
+            <div class="vocab-section" data-category="styles">
+                <h2 class="vocab-section__title">
+                    <span class="vocab-section__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                        </svg>
+                    </span>
+                    Estilos de Cocción de Huevos
+                    <small>Egg Cooking Styles</small>
+                    <span class="vocab-section__count">12 términos</span>
+                </h2>
+                <div class="vocab-grid">
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Omelet bien cocido</div>
+                        <div class="vocab-card__en">Well-done omelet</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style1.mp3" aria-label="Reproducir Well-done omelet">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Omelet jugoso</div>
+                        <div class="vocab-card__en">Soft omelet</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style2.mp3" aria-label="Reproducir Soft omelet">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Omelet suave / cremoso</div>
+                        <div class="vocab-card__en">Runny omelet</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style3.mp3" aria-label="Reproducir Runny omelet">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos fritos (yema blanda, solo por un lado)</div>
+                        <div class="vocab-card__en">Sunny-side up</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style4.mp3" aria-label="Reproducir Sunny-side up">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos fritos (vuelta y vuelta, yema blanda)</div>
+                        <div class="vocab-card__en">Over easy</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style5.mp3" aria-label="Reproducir Over easy">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos fritos (vuelta y vuelta, yema cocida)</div>
+                        <div class="vocab-card__en">Over hard</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style6.mp3" aria-label="Reproducir Over hard">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos fritos (vuelta y vuelta, yema término medio)</div>
+                        <div class="vocab-card__en">Over medium</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style7.mp3" aria-label="Reproducir Over medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos revueltos</div>
+                        <div class="vocab-card__en">Scrambled eggs</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style8.mp3" aria-label="Reproducir Scrambled eggs">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos revueltos suaves</div>
+                        <div class="vocab-card__en">Soft scrambled eggs</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style9.mp3" aria-label="Reproducir Soft scrambled eggs">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Solo claras</div>
+                        <div class="vocab-card__en">Egg whites only</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style10.mp3" aria-label="Reproducir Egg whites only">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos duros</div>
+                        <div class="vocab-card__en">Hard-boiled eggs</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style11.mp3" aria-label="Reproducir Hard-boiled eggs">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-card__es">Huevos blandos / pasados por agua</div>
+                        <div class="vocab-card__en">Soft-boiled eggs</div>
+                        <button class="audio-btn" data-audio="audio/omelet/style12.mp3" aria-label="Reproducir Soft-boiled eggs">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        </button>
+                    </div>
+
+                </div><!-- /vocab-grid -->
+            </div><!-- /vocab-section styles -->
+
+        </section><!-- /panel-vocabulario -->
+
+
+        <!-- ========================================================
+             PANEL 2: DIÁLOGOS
+        ======================================================== -->
+        <section class="tab-panel" id="panel-dialogos"
+                 role="tabpanel" aria-labelledby="tab-dialogos">
+
+            <!-- ── Diálogo 1: Pedido clásico de omelet con todo ── -->
+            <div class="dialogue-wrapper">
+                <div class="dialogue-header">
+                    <h2 class="dialogue-title">Pedido clásico de omelet con todo</h2>
+                    <p class="dialogue-context">El huésped se acerca a la estación de desayuno en vivo y solicita una omelet personalizada con jamón, queso y tomates.</p>
+                </div>
+
+                <div class="dialogue-layout">
+                    <!-- Imagen referencial con fallback elegante -->
+                    <figure class="dialogue-figure">
+                        <img src="assets/img/dialogos/dialogo-omelet.jpg"
+                             alt="Cocinero preparando un omelet en el buffet"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="dialogue-figure__placeholder" style="display:none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path>
+                                <line x1="6" y1="17" x2="18" y2="17"></line>
+                            </svg>
+                            <p>Estación de Omelet en vivo</p>
+                        </div>
+                        <figcaption>Situación: Orden de omelet en el buffet</figcaption>
+                    </figure>
+
+                    <!-- Burbujas de chat -->
+                    <div class="dialogue-chat" role="log" aria-label="Conversación: Pedido de omelet">
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">👨‍🍳 Cocinero / Chef</span>
+                            <p class="bubble__text">"Good morning! Welcome. How would you like your eggs today?"</p>
+                            <p class="bubble__translation">¡Buenos días! Bienvenido/a. ¿Cómo le gustaría sus huevos hoy?</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d1-1.mp3" aria-label="Reproducir frase del chef">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Good morning! I would like an omelet, please."</p>
+                            <p class="bubble__translation">¡Buenos días! Quisiera una omelet, por favor.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d1-2.mp3" aria-label="Reproducir frase del huésped">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">👨‍🍳 Cocinero / Chef</span>
+                            <p class="bubble__text">"Great! Which ingredients would you like?"</p>
+                            <p class="bubble__translation">¡Genial! ¿Qué ingredientes le gustaría?</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d1-3.mp3" aria-label="Reproducir frase del chef">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Ham, cheese, and tomatoes, please."</p>
+                            <p class="bubble__translation">Jamón, queso y tomates, por favor.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d1-4.mp3" aria-label="Reproducir frase del huésped">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">👨‍🍳 Cocinero / Chef</span>
+                            <p class="bubble__text">"Perfect. One moment, please... Here you go! Enjoy your breakfast."</p>
+                            <p class="bubble__translation">Perfecto. Un momento, por favor... ¡Aquí tiene! Que disfrute su desayuno.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d1-5.mp3" aria-label="Reproducir frase del chef">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Thank you very much!"</p>
+                            <p class="bubble__translation">¡Muchas gracias!</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d1-6.mp3" aria-label="Reproducir frase del huésped">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                    </div><!-- /dialogue-chat -->
+                </div><!-- /dialogue-layout -->
+            </div><!-- /dialogue-wrapper 1 -->
+
+
+            <!-- ── Diálogo 2: Huevos fritos (yema blanda) ── -->
+            <div class="dialogue-wrapper">
+                <div class="dialogue-header">
+                    <h2 class="dialogue-title">Huevos fritos (yema blanda)</h2>
+                    <p class="dialogue-context">El huésped solicita huevos estilo "sunny-side up" con tocineta crujiente. El cocinero le advierte amablemente que el plato está caliente.</p>
+                </div>
+
+                <div class="dialogue-layout dialogue-layout--reverse">
+                    <!-- Imagen referencial con fallback elegante -->
+                    <figure class="dialogue-figure">
+                        <img src="assets/img/dialogos/dialogo-huevos.jpg"
+                             alt="Huevos fritos con tocineta recién servidos"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="dialogue-figure__placeholder" style="display:none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                            </svg>
+                            <p>Huevos fritos Sunny-side up</p>
+                        </div>
+                        <figcaption>Situación: Orden de huevos fritos y tocineta</figcaption>
+                    </figure>
+
+                    <!-- Burbujas de chat -->
+                    <div class="dialogue-chat" role="log" aria-label="Conversación: Huevos fritos">
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">👨‍🍳 Cocinero / Chef</span>
+                            <p class="bubble__text">"Hello! Would you like an omelet or fried eggs?"</p>
+                            <p class="bubble__translation">¡Hola! ¿Desea una omelet o huevos fritos?</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d2-1.mp3" aria-label="Reproducir frase del chef">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Two fried eggs, please. Sunny-side up!"</p>
+                            <p class="bubble__translation">Dos huevos fritos, por favor. ¡Con la yema blanda!</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d2-2.mp3" aria-label="Reproducir frase del huésped">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">👨‍🍳 Cocinero / Chef</span>
+                            <p class="bubble__text">"Coming right up! Would you like bacon on the side?"</p>
+                            <p class="bubble__translation">¡Enseguida salen! ¿Le gustaría tocineta al lado?</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d2-3.mp3" aria-label="Reproducir frase del chef">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Yes, please. Two slices of bacon."</p>
+                            <p class="bubble__translation">Sí, por favor. Dos rebanadas de tocineta.</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d2-4.mp3" aria-label="Reproducir frase del huésped">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--server">
+                            <span class="bubble__label">👨‍🍳 Cocinero / Chef</span>
+                            <p class="bubble__text">"Here you go. Be careful, the plate is hot. Have a nice day!"</p>
+                            <p class="bubble__translation">Aquí tiene. Cuidado, el plato está caliente. ¡Que tenga un feliz día!</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d2-5.mp3" aria-label="Reproducir frase del chef">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="bubble bubble--customer">
+                            <span class="bubble__label">👤 Huésped / Guest</span>
+                            <p class="bubble__text">"Thank you, you too!"</p>
+                            <p class="bubble__translation">¡Gracias, igualmente!</p>
+                            <button class="audio-btn audio-btn--inline" data-audio="audio/omelet/d2-6.mp3" aria-label="Reproducir frase del huésped">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            </button>
+                        </div>
+
+                    </div><!-- /dialogue-chat -->
+                </div><!-- /dialogue-layout -->
+            </div><!-- /dialogue-wrapper 2 -->
+
+        </section><!-- /panel-dialogos -->
+
+
+        <!-- ========================================================
+             PANEL 3: EJERCICIOS
+        ======================================================== -->
+        <section class="tab-panel" id="panel-ejercicios"
+                 role="tabpanel" aria-labelledby="tab-ejercicios">
+
+            <!-- ── Ejercicio 1: Completar oraciones ── -->
+            <div class="exercise-block">
+                <div class="exercise-block__header">
+                    <span class="exercise-block__num">Parte 1</span>
+                    <h2 class="exercise-block__title">Completación — Frases en la Estación de Omelet</h2>
+                    <p class="exercise-block__desc">Elige la palabra correcta del recuadro (haz clic sobre la palabra para insertarla y escucharla) o escríbela en el espacio.</p>
+                </div>
+
+                <div class="wordbank">
+                    <span class="wordbank__label">Caja de opciones:</span>
+                    <button class="wordbank__word" type="button" data-word="hot">hot</button>
+                    <button class="wordbank__word" type="button" data-word="ingredients">ingredients</button>
+                    <button class="wordbank__word" type="button" data-word="like">like</button>
+                    <button class="wordbank__word" type="button" data-word="without">without</button>
+                    <button class="wordbank__word" type="button" data-word="minutes">minutes</button>
+                </div>
+
+                <form class="fill-form" id="fillForm" novalidate>
+                    <ol class="fill-list">
+                        <li class="fill-item">
+                            <span>1. "Good morning! How would you <input class="fill-input" type="text" data-answer="like" placeholder="________" autocomplete="off" aria-label="Respuesta 1"> your eggs today?"</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>2. "Which <input class="fill-input" type="text" data-answer="ingredients" placeholder="________" autocomplete="off" aria-label="Respuesta 2"> would you like in your omelet?"</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>3. "With cheese or <input class="fill-input" type="text" data-answer="without" placeholder="________" autocomplete="off" aria-label="Respuesta 3"> cheese?"</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>4. "It will take about two <input class="fill-input" type="text" data-answer="minutes" placeholder="________" autocomplete="off" aria-label="Respuesta 4">, please."</span>
+                        </li>
+                        <li class="fill-item">
+                            <span>5. "Here you go! Be careful, the plate is <input class="fill-input" type="text" data-answer="hot" placeholder="________" autocomplete="off" aria-label="Respuesta 5">."</span>
+                        </li>
+                    </ol>
+                    <div class="exercise-actions">
+                        <button type="button" class="btn-check" id="checkFill">Comprobar ✓</button>
+                        <button type="button" class="btn-reset" id="resetFill">Reiniciar ↺</button>
+                    </div>
+                    <div class="exercise-feedback" id="fillFeedback" aria-live="polite"></div>
+                </form>
+            </div>
+
+
+            <!-- ── Ejercicio 2: Selección múltiple ── -->
+            <div class="exercise-block">
+                <div class="exercise-block__header">
+                    <span class="exercise-block__num">Parte 2</span>
+                    <h2 class="exercise-block__title">Selección Múltiple — Preguntas Situacionales</h2>
+                    <p class="exercise-block__desc">Elige la opción correcta para completar la oración o responder al huésped.</p>
+                </div>
+
+                <form class="mc-form" id="mcForm" novalidate>
+
+                    <!-- Pregunta 1 -->
+                    <div class="mc-question" role="group" aria-labelledby="q1-label">
+                        <p class="mc-question__text" id="q1-label">
+                            <strong>1.</strong> Si un huésped pide un huevo con la yema blanda cocinado solo por un lado, está pidiendo:
+                        </p>
+                        <label class="mc-option"><input type="radio" name="q1" value="a"> <span>a) Over hard</span></label>
+                        <label class="mc-option"><input type="radio" name="q1" value="b"> <span>b) Sunny-side up</span></label>
+                        <label class="mc-option"><input type="radio" name="q1" value="c"> <span>c) Scrambled eggs</span></label>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="mc-question" role="group" aria-labelledby="q2-label">
+                        <p class="mc-question__text" id="q2-label">
+                            <strong>2.</strong> ¿Cómo le preguntas al huésped qué ingredientes quiere en su omelet?
+                        </p>
+                        <label class="mc-option"><input type="radio" name="q2" value="a"> <span>a) Which ingredients would you like?</span></label>
+                        <label class="mc-option"><input type="radio" name="q2" value="b"> <span>b) Where are the ingredients?</span></label>
+                        <label class="mc-option"><input type="radio" name="q2" value="c"> <span>c) Do you like cooking eggs?</span></label>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="mc-question" role="group" aria-labelledby="q3-label">
+                        <p class="mc-question__text" id="q3-label">
+                            <strong>3.</strong> Un huésped que pide un omelet de "Egg whites" quiere:
+                        </p>
+                        <label class="mc-option"><input type="radio" name="q3" value="a"> <span>a) Solo las yemas</span></label>
+                        <label class="mc-option"><input type="radio" name="q3" value="b"> <span>b) Solo las claras</span></label>
+                        <label class="mc-option"><input type="radio" name="q3" value="c"> <span>c) El huevo completo</span></label>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="mc-question" role="group" aria-labelledby="q4-label">
+                        <p class="mc-question__text" id="q4-label">
+                            <strong>4.</strong> ¿Qué frase usas para avisarle al huésped que el plato quema?
+                        </p>
+                        <label class="mc-option"><input type="radio" name="q4" value="a"> <span>a) Enjoy your breakfast.</span></label>
+                        <label class="mc-option"><input type="radio" name="q4" value="b"> <span>b) Be careful, the plate is hot.</span></label>
+                        <label class="mc-option"><input type="radio" name="q4" value="c"> <span>c) It will take two minutes.</span></label>
+                    </div>
+
+                    <div class="exercise-actions">
+                        <button type="button" class="btn-check" id="checkMC">Comprobar ✓</button>
+                        <button type="button" class="btn-reset" id="resetMC">Reiniciar ↺</button>
+                    </div>
+                    <div class="exercise-feedback" id="mcFeedback" aria-live="polite"></div>
+                </form>
+            </div>
+
+
+            <!-- ── Ejercicio 3: Flashcards 3D ── -->
+            <div class="exercise-block">
+                <div class="exercise-block__header">
+                    <span class="exercise-block__num">Parte 3</span>
+                    <h2 class="exercise-block__title">Tarjetas de Estudio Interactivas (Flashcards 3D)</h2>
+                    <p class="exercise-block__desc">Toca cualquier tarjeta para voltearla y practicar la pronunciación y traducción en inglés.</p>
+                </div>
+
+                <div class="flashcards-grid">
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Cómo le gustaría sus huevos hoy? — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>¡Buenos días! ¿Cómo le gustaría sus huevos hoy?</p></div>
+                            <div class="flashcard__back"><p>Good morning! How would you like your eggs today?</p></div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Desea una omelet o huevos fritos? — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>¿Desea una omelet o huevos fritos?</p></div>
+                            <div class="flashcard__back"><p>Would you like an omelet or fried eggs?</p></div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Qué ingredientes le gustaría en su omelet? — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>¿Qué ingredientes le gustaría en su omelet?</p></div>
+                            <div class="flashcard__back"><p>Which ingredients would you like in your omelet?</p></div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: ¿Lo quiere con todo? — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>¿Lo quiere con todo?</p></div>
+                            <div class="flashcard__back"><p>Would you like everything on it?</p></div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Tardará unos dos minutos, por favor. — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>Tardará unos dos minutos, por favor.</p></div>
+                            <div class="flashcard__back"><p>It will take about two minutes, please.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Cuidado, el plato está caliente. — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>Cuidado, el plato está caliente.</p></div>
+                            <div class="flashcard__back"><p>Careful, the plate is hot.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Huevos fritos (yema blanda, solo por un lado) — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>Huevos fritos (yema blanda, solo por un lado)</p></div>
+                            <div class="flashcard__back"><p>Sunny-side up</p></div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" tabindex="0" role="button" aria-label="Tarjeta: Huevos revueltos — clic para voltear">
+                        <div class="flashcard__inner">
+                            <div class="flashcard__front"><p>Huevos revueltos</p></div>
+                            <div class="flashcard__back"><p>Scrambled eggs</p></div>
+                        </div>
+                    </div>
+
+                </div><!-- /flashcards-grid -->
+
+                <div class="flashcard-hint" aria-hidden="true">
+                    Toca o haz clic en la tarjeta para voltearla
+                </div>
+
+            </div><!-- /exercise-block flashcards -->
+
+        </section><!-- /panel-ejercicios -->
+
+    </main>
+
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="mod-footer">
+        <p>Módulo 3: Omelet Station Chef · <strong>Maremares English Guide</strong> · Hotel Maremares</p>
+        <a href="index.html" class="mod-footer__back">← Volver al inicio</a>
+    </footer>
+
+    <!-- Script interactivo del Módulo 3 organizado en assets/modulo 3 -->
+    <script src="./assets/modulo 3/modulo3.js"></script>
+</body>
+</html>
